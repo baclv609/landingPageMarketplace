@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Marketplace detail</title>
+
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+
+    <!-- icon -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+
+    <style>
+        .material-symbols-outlined {
+            font-size: 16px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <main class="container mx-auto m-4">
+        <div class="py-5">
+            <!-- Button quay về -->
+            <div>
+                <button
+                    class="flex items-center py-1 px-4 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:text-blue-700 focus:z-10">
+                    <span class="material-symbols-outlined text-[16px]">
+                        arrow_back_ios
+                    </span>
+                    <p class="text-sm"> Quay về</p>
+                </button>
+            </div>
+
+            <!-- header -->
+            <div class="my-4">
+                <div class="grid grid-cols-6">
+                    <!-- Logo and Info -->
+                    <div class="col-span-6 lg:col-span-4 md:col-span-6 my-4 flex">
+                        <!-- Logo -->
+                        <div class="">
+                            <img class="rounded-lg max-w-[150px] max-h-[150px]"
+                                src="https://play-lh.googleusercontent.com/VRMWkE5p3CkWhJs6nv-9ZsLAs1QOg5ob1_3qg-rckwYW7yp1fMrYZqnEFpk0IoVP4LM"
+                                alt="">
+                        </div>
+
+                        <!-- Info -->
+                        <div class="ml-6 flex flex-col gap-2">
+                            <!-- Tittle -->
+                            <div class="flex ">
+                                <h1 class="font-bold line-clamp-2 text-2xl leading-9 text-[#212b36] ml-1"> Tự động đăng
+                                    xuất
+                                    khỏi tài khoản Facebook trên tất cả các thiết bị trừ phiên đăng nhập hiện tại. <span
+                                        class="h-6 min-w-6 rounded-md items-center inline-flex justify-center px-2 py-1 font-bold bg-[#ecf5ff] text-[#5979fe] text-xs"
+                                        style="transition: all 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;">V1.0.0</span>
+                                </h1>
+
+                            </div>
+
+                            <!-- Mini Info -->
+                            <div class="text-[#637381] flex items-center flex-wrap text-[14px] gap-x-[8px]">
+                                <p>Tuan tran</p>
+                                <div class="pl-2 border-l-1 flex items-center gap-1">
+                                    <span class="material-symbols-outlined">
+                                        arrow_downward
+                                    </span> 50
+                                </div>
+                                <div class="pl-2 border-l-1 flex items-center gap-1">
+                                    <span class="material-symbols-outlined">
+                                        schedule
+                                    </span> Post date 04/06/2024
+                                </div>
+                                <div class="pl-2 border-l-1 flex items-center gap-1">
+                                    <span class="material-symbols-outlined">
+                                        phonelink_setup
+                                    </span> Last update 25/07/2024
+                                </div>
+                            </div>
+
+
+                            <!-- Text -->
+                            <div>
+                                <p class="font-semibold text-gray-600 line-clamp-2 ">
+                                    Công cụ này là một giải pháp tiên tiến và tiện lợi, được thiết kế để tối ưu hóa quá
+                                    trình tích lũy Pixel. Đây là công cụ lý tưởng cho những người dùng muốn tối đa hóa
+                                    lợi
+                                    ích từ việc sử dụng Telegram mà không cần tốn quá nhiều thời gian và công sức
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Layout div -->
+                    <div>
+                        <!-- Don't delete this this is for responsive -->
+                    </div>
+
+                    <!-- Side button -->
+                    <div class="col-span-6 lg:col-span-1 md:col-span-6 mt-4">
+                        <div class="flex justify-end">
+                            <button
+                                class="flex items-center p-1 px-4 mx-2 text-sm rounded bg-transparent border border-gray-300">
+                                <span class="material-symbols-outlined text-[16px] mr-1">
+                                    warning
+                                </span>
+                                <p class="text-sm">Report</p>
+                            </button>
+                            <button
+                                class="flex items-center p-1 px-4 text-sm rounded bg-gray-500 text-white border border-gray-300">
+                                <span class="material-symbols-outlined text-[16px] mr-1">
+                                    download
+                                </span>
+                                <p class="text-sm">Download</p>
+                            </button>
+                        </div>
+                        <div class="flex justify-end my-3">
+                            <p class="font-semibold text-gray-400">Fee: <span class="text-green-400">0</span> VNĐ/Month
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-sm font-medium text-center text-gray-500 border-b border-gray-200">
+                <ul class="flex flex-wrap -mb-px">
+                    <li class="me-2">
+                        <button aria-selected="true" aria-selected="true" id="profile-styled-tab"
+                            data-tabs-target="#overview-detail"
+                            class="inline-block p-4 border-b-2 border-transparent rounded-t-lg hover:text-gray-600">Overview</button>
+                    </li>
+                    <li class="me-2">
+                        <button aria-selected="false" id="review-styled-tab" data-tabs-target="#styled-review"
+                            class="inline-block p-4 border-b-2 border-transparent rounded-t-lg hover:text-gray-600">Review</button>
+                    </li>
+                    <li class="me-2">
+                        <button aria-selected="false" id="changelog-styled-tab" data-tabs-target="#styled-changelog"
+                            class="inline-block p-4 border-b-2 border-transparent rounded-t-lg hover:text-gray-600">Changelog</button>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Main Content -->
+            <div id="default-styled-tab-content">
+                <!-- overview-detail -->
+                <div class="my-4" id="overview-detail">
+                    <h1 class="my-4 font-bold text-3xl">HƯỚNG DẪN SỬ DỤNG</h1>
+                    <div>
+                        <h2 class="font-bold text-2xl">LƯU Ý:</h2>
+                        <ul>
+                            <li class="ml-8">Tài khoản Telegram cần được đăng nhập</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Review -->
+                <div class="my-4 hidden" id="styled-review">
+
+                    <button class="text-white py-[6px] px-3 bg-[#5979FE] text-sm my-5 rounded">Viết bình luận</button>
+
+                    <div class="p-4 border">
+                        <div class="w-full mx-auto border px-6 py-4 rounded-lg mb-5">
+                            <div class="flex justify-between mb-3">
+                                <div class="flex items-center">
+                                    <img src="https://flowbite.com/docs/images/people/profile-picture-1.jpg"
+                                        alt="comment.name" class="w-12 h-12 rounded-full mr-4" />
+                                    <div class="flex flex-col">
+                                        <!-- name -->
+                                        <div class="ml-1 text-lg font-medium text-gray-800">
+                                            yuyu
+                                        </div>
+
+                                        <!-- rate -->
+                                        <div class="flex items-center">
+                                            <svg class="w-4 h-4 text-yellow-300 ms-1" aria-hidden="true"
+                                                xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                                                viewBox="0 0 22 20">
+                                                <path
+                                                    d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                                            </svg>
+                                            <svg class="w-4 h-4 text-yellow-300 ms-1" aria-hidden="true"
+                                                xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                                                viewBox="0 0 22 20">
+                                                <path
+                                                    d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                                            </svg>
+                                            <svg class="w-4 h-4 text-yellow-300 ms-1" aria-hidden="true"
+                                                xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                                                viewBox="0 0 22 20">
+                                                <path
+                                                    d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                                            </svg>
+                                            <svg class="w-4 h-4 text-yellow-300 ms-1" aria-hidden="true"
+                                                xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                                                viewBox="0 0 22 20">
+                                                <path
+                                                    d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                                            </svg>
+                                            <svg class="w-4 h-4 ms-1 text-gray-300 dark:text-gray-500"
+                                                aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                                fill="currentColor" viewBox="0 0 22 20">
+                                                <path
+                                                    d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                                            </svg>
+                                        </div>
+                                        <!-- time -->
+                                        <div class="ml-1 text-gray-500 text-[12px]">
+                                            4 giờ trước
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="text-[14px] leading-relaxed mb-3 w-full 2xl:w-4/5 font-normal">
+                                123
+                            </p>
+                            <div class="flex items-center font-semibold">
+                                <div class="flex items-center mr-4">
+                                    <div class="text-[14px] text-[#555555] hover:text-gray-700 mr-4">
+                                        Like
+                                    </div>
+                                    <div class="text-[14px] text-[#555555] hover:text-gray-700">
+                                        Reply
+                                    </div>
+                                </div>
+                                <div class="flex items-center">
+                                    <div class="text-[14px] text-[#555555] hover:text-gray-700 mr-4">
+                                        Report
+                                    </div>
+                                    <div class="text-[14px] text-[#555555] hover:text-gray-700">
+                                        Share
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="w-full mx-auto border px-6 py-4 rounded-lg mb-5">
+                            <div class="flex justify-between mb-3">
+                                <div class="flex items-center">
+                                    <img src="https://flowbite.com/docs/images/people/profile-picture-1.jpg"
+                                        alt="comment.name" class="w-12 h-12 rounded-full mr-4" />
+                                    <div class="flex flex-col">
+                                        <!-- name -->
+                                        <div class="ml-1 text-lg font-medium text-gray-800">
+                                            yuyu
+                                        </div>
+
+                                        <!-- rate -->
+                                        <div class="flex items-center">
+                                            <svg class="w-4 h-4 text-yellow-300 ms-1" aria-hidden="true"
+                                                xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                                                viewBox="0 0 22 20">
+                                                <path
+                                                    d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                                            </svg>
+                                            <svg class="w-4 h-4 text-yellow-300 ms-1" aria-hidden="true"
+                                                xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                                                viewBox="0 0 22 20">
+                                                <path
+                                                    d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                                            </svg>
+                                            <svg class="w-4 h-4 text-yellow-300 ms-1" aria-hidden="true"
+                                                xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                                                viewBox="0 0 22 20">
+                                                <path
+                                                    d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                                            </svg>
+                                            <svg class="w-4 h-4 text-yellow-300 ms-1" aria-hidden="true"
+                                                xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                                                viewBox="0 0 22 20">
+                                                <path
+                                                    d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                                            </svg>
+                                            <svg class="w-4 h-4 ms-1 text-gray-300 dark:text-gray-500"
+                                                aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                                fill="currentColor" viewBox="0 0 22 20">
+                                                <path
+                                                    d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                                            </svg>
+                                        </div>
+                                        <!-- time -->
+                                        <div class="ml-1 text-gray-500 text-[12px]">
+                                            4 giờ trước
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="text-[14px] leading-relaxed mb-3 w-full 2xl:w-4/5 font-normal">
+                                123
+                            </p>
+                            <div class="flex items-center font-semibold">
+                                <div class="flex items-center mr-4">
+                                    <div class="text-[14px] text-[#555555] hover:text-gray-700 mr-4">
+                                        Like
+                                    </div>
+                                    <div class="text-[14px] text-[#555555] hover:text-gray-700">
+                                        Reply
+                                    </div>
+                                </div>
+                                <div class="flex items-center">
+                                    <div class="text-[14px] text-[#555555] hover:text-gray-700 mr-4">
+                                        Report
+                                    </div>
+                                    <div class="text-[14px] text-[#555555] hover:text-gray-700">
+                                        Share
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+
+
+
+                <!-- Changelog -->
+                <div class="my-4 hidden" id="styled-changelog">
+
+                    <ol class="relative border-s border-gray-200">
+                        <li class="mb-10 ms-6">
+                            <span
+                                class="absolute flex items-center justify-center w-6 h-6 bg-blue-100 rounded-full -start-3 ring-8 ring-white">
+                                <svg class="w-2.5 h-2.5 text-blue-800" aria-hidden="true"
+                                    xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                                    <path
+                                        d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z" />
+                                </svg>
+                            </span>
+                            <h3 class="flex items-center mb-1 text-lg font-semibold text-gray-900">Gemlogin v2.0.0 <span
+                                    class="bg-blue-100 text-blue-800 text-sm font-medium me-2 px-2.5 py-0.5 rounded ms-3">Latest</span>
+                            </h3>
+                            <time class="block mb-2 text-sm font-normal leading-none text-gray-400 ">Released
+                                on January 13th, 2022</time>
+                            <p class="mb-4 text-base font-normal text-gray-500 ">Get access to over 20+
+                                pages including a dashboard layout, charts, kanban board, calendar, and pre-order
+                                E-commerce
+                                & Marketing pages.</p>
+                            <a href="#"
+                                class="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:outline-none focus:ring-gray-100 focus:text-blue-700"><svg
+                                    class="w-3.5 h-3.5 me-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                    fill="currentColor" viewBox="0 0 20 20">
+                                    <path
+                                        d="M14.707 7.793a1 1 0 0 0-1.414 0L11 10.086V1.5a1 1 0 0 0-2 0v8.586L6.707 7.793a1 1 0 1 0-1.414 1.414l4 4a1 1 0 0 0 1.416 0l4-4a1 1 0 0 0-.002-1.414Z" />
+                                    <path
+                                        d="M18 12h-2.55l-2.975 2.975a3.5 3.5 0 0 1-4.95 0L4.55 12H2a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-4a2 2 0 0 0-2-2Zm-3 5a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z" />
+                                </svg> Download</a>
+                        </li>
+                        <li class="mb-10 ms-6">
+                            <span
+                                class="absolute flex items-center justify-center w-6 h-6 bg-blue-100 rounded-full -start-3 ring-8 ring-white">
+                                <svg class="w-2.5 h-2.5 text-blue-800 dark:text-blue-300" aria-hidden="true"
+                                    xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                                    <path
+                                        d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z" />
+                                </svg>
+                            </span>
+                            <h3 class="mb-1 text-lg font-semibold text-gray-900 ">Gemlogin v1.3.0</h3>
+                            <time class="block mb-2 text-sm font-normal leading-none text-gray-400">Released
+                                on December 7th, 2021</time>
+                            <p class="text-base font-normal text-gray-500">All of the pages and
+                                components are first designed in Figma and we keep a parity between the two versions
+                                even as
+                                we update the project.</p>
+                        </li>
+                        <li class="ms-6">
+                            <span
+                                class="absolute flex items-center justify-center w-6 h-6 bg-blue-100 rounded-full -start-3 ring-8 ring-white">
+                                <svg class="w-2.5 h-2.5 text-blue-800" aria-hidden="true"
+                                    xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                                    <path
+                                        d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z" />
+                                </svg>
+                            </span>
+                            <h3 class="mb-1 text-lg font-semibold text-gray-900">Gemlogin v1.2.2
+                            </h3>
+                            <time class="block mb-2 text-sm font-normal leading-none text-gray-400">Released
+                                on December 2nd, 2021</time>
+                            <p class="text-base font-normal text-gray-500">This is the first version.</p>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+
+            <!-- Related Products -->
+            <div id="pelated-products"></div>
+        </div>
+
+
+
+</body>
+
+
+<script src="./js/index.js"></script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const tabs = document.querySelectorAll('[data-tabs-target]');
+        const tabContents = document.querySelectorAll('#default-styled-tab-content > div');
+
+        // Set the first tab as active
+        if (tabs.length > 0) {
+            const firstTab = tabs[0];
+            const targetId = firstTab.getAttribute('data-tabs-target');
+
+            // Set the first tab as active
+            firstTab.setAttribute('aria-selected', 'true');
+            firstTab.classList.add('text-blue-600', 'border-blue-600');
+            firstTab.classList.remove('border-transparent');
+
+            // Show the corresponding tab content
+            tabContents.forEach(content => {
+                if (content.id === targetId.substring(1)) {
+                    content.classList.remove('hidden');
+                } else {
+                    content.classList.add('hidden');
+                }
+            });
+        }
+
+        tabs.forEach(tab => {
+            tab.addEventListener('click', function () {
+                const targetId = this.getAttribute('data-tabs-target');
+
+                // Update the active tab
+                tabs.forEach(t => {
+                    t.setAttribute('aria-selected', 'false');
+                    t.classList.remove('text-blue-600', 'border-blue-600');
+                    t.classList.add('border-transparent');
+                });
+                this.setAttribute('aria-selected', 'true');
+                this.classList.add('text-blue-600', 'border-blue-600');
+                this.classList.remove('border-transparent');
+
+                // Show the corresponding tab content
+                tabContents.forEach(content => {
+                    if (content.id === targetId.substring(1)) {
+                        content.classList.remove('hidden');
+                    } else {
+                        content.classList.add('hidden');
+                    }
+                });
+            });
+        });
+    });
+
+
+
+</script>
+
+</html>

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Marketplace</title>
+
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+
+    <!-- icon -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            list-style: none;
+            text-decoration: none;
+        }
+
+        body {
+            overflow: auto;
+            font-family: sans-serif;
+            height: 100vh;
+            background: #f0f2f5;
+            font-family: "Public Sans", sans-serif;
+        }
+
+        .icon-large {
+            font-size: 15px;
+            height: 15px;
+        }
+    </style>
+    <!-- css tailwind  -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+    <div>
+        <main class="container mx-auto m-4">
+            <section>
+                <!-- Phần nội dung -->
+                <div class="mr-3">
+                    <!-- header_Form -->
+
+
+                    <!-- category + list card -->
+                    <div class="flex items-start w-full mr-4 mt-5 pt-5">
+                        <div class="w-[300px] mt-2 bg-white rounded py-2 px-8">
+
+                            <!-- Card start -->
+                            <div class="bg-white">
+                                <div class="">
+                                    <div class="">
+                                        <img class="h-32 w-32 rounded-full border-4 border-white mx-auto my-2"
+                                            src="https://randomuser.me/api/portraits/women/21.jpg" alt="">
+                                        <div class="py-1">
+                                            <h4 class="font-bold text-xl text-gray-800 mb-1">Cait
+                                                Genevieve</h4>
+                                            <div class="mt-2">
+                                                <div class="flex items-center text-gray-700 text-sm">
+                                                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Telegram_logo.svg/2048px-Telegram_logo.svg.png"
+                                                        alt="image-icon-user" class="w-4 h-4 rounded-full" />
+                                                    <a href="#"
+                                                        class="ml-2 italic text-blue-500">https://t.me/gemlogin.com</a>
+                                                </div>
+                                                <div class="flex items-center text-[#637381] text-sm my-1">
+                                                    <span class="material-symbols-outlined text-[16px]">
+                                                        person
+                                                    </span>
+                                                    <p class="ml-2">163 monthly viewers</p>
+                                                </div>
+
+                                                <!-- star -->
+                                                <div class="flex items-center text-[#637381] text-sm my-1">
+                                                    <span class="material-symbols-outlined text-[16px]">
+                                                        star
+                                                    </span>
+                                                    <p class="ml-2">3 / 5</p>
+                                                </div>
+                                                <!-- Created  -->
+                                                <div class="flex items-center text-[#637381] text-sm my-1">
+                                                    <span class="material-symbols-outlined text-[16px]">
+                                                        edit_square
+                                                    </span>
+                                                    <p class="ml-2">Created in 2024 July</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <!-- Card end -->
+                        </div>
+
+                        <div class="flex-1 ml-2" style="width: calc(100% - 250px);">
+                            <div id="card-container" class="flex flex-wrap">
+
+                                <!-- <div class="grow-0 shrink-0 xl:w-1/3 lg:w-1/2 md:w-full sm:w-full">
+                                    <div class="m-2 item-card bg-white text-gray-900 rounded overflow-hidden h-[225px]">
+
+                                        <div class="grid grid-cols-6 pt-6 px-6 h-[74px]">
+                                            <div class="col-span-5 md:col-span-4">
+                                                <div class="flex items-center">
+                                                    <a href="" class="card-icon-link mr-2">
+                                                        <img src="https://via.placeholder.com/50" alt="Card Icon"
+                                                            class="card-icon w-12 h-12 rounded-md border border-gray-300">
+                                                    </a>
+                                                    <div class="card-name flex flex-col">
+                                                        <a href="/marketplace-details"
+                                                            class="card-title text-lg font-semibold text-gray-900 line-clamp-1 cursor-pointer">Tự
+                                                            Động Chia Sẻ Nội Dung Lên Nhiều Nền Tảng</a>
+                                                        <span class="card-creator text-xs text-gray-500">Created by
+                                                            <span
+                                                                class="creator-name text-blue-500 font-bold cursor-pointer">Creator
+                                                                Name</span></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                // Don't delete this this is for responsive 
+                                            </div>
+                                            
+                                            <div class="col-span-1 md:col-span-1">
+                                                <div class="card-download bg-blue-600 text-white rounded-md p-2 flex items-center justify-center cursor-pointer"
+                                                    onclick="showQuoteDialog()">
+                                                    <span class="material-symbols-outlined text-[20px]">download</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="px-5 pt-[10px] flex flex-col h-[140px]">
+                                            <a href="#">
+                                                <p
+                                                    class="text-sm text-[#637381] line-clamp-2 mb-3 leading-[23px] cursor-pointer">
+                                                Phân nội dung content
+                                                </p>
+                                            </a>
+                                            <div class="flex flex-col mt-2">
+                                                <span class="post-date text-xs text-[#637381]">Post date:
+                                                    2024-08-05</span>
+                                                <hr class="separator border-gray-200 my-2">
+                                                <div class="flex justify-between items-center font-medium">
+                                                    <div class="flex text-xs gap-3 text-[#637381]">
+                                                        <div class="flex items-center">
+                                                            <span class="material-symbols-outlined icon-large">
+                                                                visibility
+                                                            </span>
+                                                            <p class="ml-1">123</p>
+                                                        </div>
+                                                        <div class="flex items-center">
+                                                            <span class="material-symbols-outlined icon-large">
+                                                                download
+                                                            </span>
+                                                            <p class="ml-1">456</p>
+                                                        </div>
+                                                        <div class="flex items-center">
+                                                            <span class="material-symbols-outlined icon-large">
+                                                                grade
+                                                            </span>
+                                                            <p class="ml-1">78</p>
+                                                        </div>
+                                                    </div>
+                                                    <div
+                                                        class="text-sm text-[#5979FE] bg-[#ECF5FF] font-bold rounded px-2 py-1">
+                                                        Free</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div> -->
+
+
+                            </div>
+                        </div>
+                    </div>
+            </section>
+
+
+        </main>
+    </div>
+</body>
+<script src="./js/index.js"></script>
+
+</html>
