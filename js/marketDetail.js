@@ -419,16 +419,23 @@ const listCard = [
         star: 4.3,
     },
 ];
-console.log(listCard.length);
-
-const cardContainer = document.getElementById("card-container");
 
 
-listCard.forEach((card) => {
-    const cardElement = document.createElement("div");
-    cardElement.classList.add("grow-0", "shrink-0", "xl:w-1/3", "lg:w-1/2", "md:w-full", "sm:w-full");
+// Lấy 6 phần tử đầu tiên từ mảng
+const firstSixCards = listCard.slice(0, 6);
 
-    cardElement.innerHTML = `
+// Lấy phần tử DOM để thêm các card vào
+const pelatedProducts = document.querySelector('#pelatedProducts');
+
+
+console.log(pelatedProducts);
+
+// Lặp qua 6 phần tử đầu tiên và xử lý chúng
+firstSixCards.forEach((card) => {
+    const cardElementDetail = document.createElement("div");
+    cardElementDetail.classList.add("grow-0", "shrink-0", "xl:w-1/3", "lg:w-1/2", "md:w-full", "sm:w-full");
+
+    cardElementDetail.innerHTML = `
     <div class="m-2 item-card bg-white text-gray-900 rounded overflow-hidden h-[225px] border border-gray-200">
       <!-- card -->
       <div class="flex justify-between items-center pt-6 px-6 h-[74px]">
@@ -473,69 +480,7 @@ listCard.forEach((card) => {
         </div>
       </div>
     </div>
-  `;
+    `;
 
-    cardContainer.appendChild(cardElement);
+    pelatedProducts.appendChild(cardElementDetail);
 });
-
-// Populate card HTML
-// cardElement.innerHTML = /*html*/ `
-//         <div class="item-card">
-//             <div class="card-header">
-//                 <div class="card-header-left">
-//                     <a href="/marketplace-details" class="card-icon-link">
-//                         <img src="${card.icon}" alt="${card.name} Icon" class="card-icon">
-//                     </a>
-//                     <div class="card-name">
-//                         <a href="/marketplace-details" class="card-title">${card.name}</a>
-//                         <span class="card-creator">Created by <span class="creator-name">${card.createdBy}</span></span>
-//                     </div>
-//                 </div>
-//                 <div class="card-download" onclick="showQuoteDialog()">
-//                     <span class="download-text">
-//                         <span class="material-symbols-outlined">download</span>
-//                     </span>
-//                 </div>
-//             </div>
-//             <div class="card-description">
-//                 <a href="/marketplace-details" class="card-description-link">${card.description}</a>
-//                 <div class="card-info">
-//                     <span class="post-date">Post date: ${card.postDate}</span>
-//                     <hr class="separator">
-//                     <div class="card-info_items">
-//                         <div class="info-stats">
-//                             <div class="stat-item">
-//                                 <span class="stat-icon">
-//                                     <span class="material-symbols-outlined">
-//                                     visibility
-//                                     </span>
-//                                 </span>
-//                                 <p class="stat-value">${card.views}</p>
-//                             </div>
-//                             <div class="stat-item">
-//                                 <span class="stat-icon">
-//                                     <span class="material-symbols-outlined">
-//                                         download
-//                                     </span>
-//                                 </span>
-//                                 <p class="stat-value">${card.download}</p>
-//                             </div>
-//                             <div class="stat-item">
-//                                 <span class="stat-icon">
-//                                     <span class="material-symbols-outlined">
-//                                         grade
-//                                     </span>
-//                                 </span>
-//                                 <p class="stat-value">${card.star}</p>
-//                             </div>
-//                         </div>
-//                         <div class="price-tag">${card.price === 0 ? 'Free' : 'Paid'}</div>
-//                     </div>
-//                 </div>
-//             </div>
-//         </div>
-//     `;
-
-// // Append the new card element to the container
-// cardContainer.appendChild(cardElement);
-// });
