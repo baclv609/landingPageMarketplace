@@ -55,7 +55,7 @@
         </header>
 
         <main class="container mx-auto m-4">
-            <div class="py-5 px-4">
+            <div class="px-4">
                 <!-- Button quay về -->
                 <div class="flex">
                     <a href="index.html"
@@ -153,7 +153,7 @@
                                     <p class="text-sm">Report</p>
                                 </button>
                                 <button
-                                    class="flex items-center p-1 px-4 text-sm rounded bg-gray-500 text-white border border-gray-300">
+                                    class="flex items-center p-1 px-4 text-sm rounded bg-[#5979fe] hover:bg-[#79bbff] text-white border border-gray-300 transition-all">
                                     <span class="material-symbols-outlined text-[16px] mr-1">
                                         download
                                     </span>
@@ -161,7 +161,8 @@
                                 </button>
                             </div>
                             <div class="flex justify-end my-3">
-                                <p class="font-semibold text-gray-400">Fee: <span class="text-green-400">0</span>
+                                <p class="font-medium text-[#637381] text-sm">Fee: <span
+                                        class="text-[#5979fe] font-bold">0</span>
                                     VNĐ/Month
                                 </p>
                             </div>
@@ -202,11 +203,12 @@
 
                     <!-- Review -->
                     <div class="my-4 hidden" id="styled-review">
-
-                        <button class="text-white py-[6px] px-3 bg-[#5979FE] text-sm my-5 rounded">Viết bình
+                        <!-- Modal toggle -->
+                        <button data-modal-target="static-modal" data-modal-toggle="static-modal"
+                            class="text-white py-[6px] px-3 bg-[#5979FE] text-sm my-5 rounded">Viết bình
                             luận</button>
 
-                        <div class="p-4 border">
+                        <div class="p-4 border rounded">
                             <div class="w-full mx-auto border px-6 py-4 rounded-lg mb-5">
                                 <div class="flex justify-between mb-3">
                                     <div class="flex items-center">
@@ -215,7 +217,7 @@
                                         <div class="flex flex-col">
                                             <!-- name -->
                                             <div class="ml-1 text-lg font-medium text-gray-800">
-                                                yuyu
+                                                Nguyễn Văn A
                                             </div>
 
                                             <!-- rate -->
@@ -259,7 +261,9 @@
                                     </div>
                                 </div>
                                 <p class="text-[14px] leading-relaxed mb-3 w-full 2xl:w-4/5 font-normal">
-                                    123
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima praesentium, est
+                                    pariatur quos incidunt maxime cum unde reprehenderit nisi accusamus beatae minus
+                                    error cumque consectetur in veniam atque ipsa. Ad!
                                 </p>
                                 <div class="flex items-center font-semibold">
                                     <div class="flex items-center mr-4">
@@ -354,17 +358,74 @@
                                     </div>
                                 </div>
                             </div>
-
 
                         </div>
+
+
+
+
+                        <!-- <button data-modal-target="static-modal" data-modal-toggle="static-modal"
+                            class="block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                            type="button">
+                            Toggle modal
+                        </button> -->
+
+                        <!-- Main modal -->
+                        <div id="static-modal" data-modal-backdrop="static" tabindex="-1" aria-hidden="true"
+                            class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+                            <div class="relative p-4 w-full max-w-2xl max-h-full">
+                                <!-- Modal content -->
+                                <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+                                    <!-- Modal header -->
+                                    <div
+                                        class="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600">
+                                        <h3 class="text-xl font-semibold text-gray-900 dark:text-white">
+                                            Static modal
+                                        </h3>
+                                        <button type="button"
+                                            class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
+                                            data-modal-hide="static-modal">
+                                            <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                                fill="none" viewBox="0 0 14 14">
+                                                <path stroke="currentColor" stroke-linecap="round"
+                                                    stroke-linejoin="round" stroke-width="2"
+                                                    d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
+                                            </svg>
+                                            <span class="sr-only">Close modal</span>
+                                        </button>
+                                    </div>
+                                    <!-- Modal body -->
+                                    <div class="p-4 md:p-5 space-y-4">
+                                        <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">
+                                            With less than a month to go before the European Union enacts new consumer
+                                            privacy laws for its citizens, companies around the world are updating their
+                                            terms of service agreements to comply.
+                                        </p>
+                                        <!-- <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">
+                      The European Union’s General Data Protection Regulation (G.D.P.R.) goes into effect on May 25 and is meant to ensure a common set of data rights in the European Union. It requires organizations to notify users as soon as possible of high-risk data breaches that could personally affect them.
+                  </p> -->
+                                    </div>
+                                    <!-- Modal footer -->
+                                    <div
+                                        class="flex items-center p-4 md:p-5 border-t border-gray-200 rounded-b dark:border-gray-600">
+                                        <button data-modal-hide="static-modal" type="button"
+                                            class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700">I
+                                            accept</button>
+                                        <button data-modal-hide="static-modal" type="button"
+                                            class="py-2.5 px-5 ms-3 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100">Decline</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
 
 
 
                     <!-- Changelog -->
-                    <div class="my-4 hidden" id="styled-changelog">
+                    <div class="my-4 hidden h-[532px] overflow-y-auto overflow-x-hidden" id="styled-changelog">
 
-                        <ol class="relative border-s border-gray-200">
+                        <ol class="relative border-s border-gray-200 ">
                             <li class="mb-10 ms-6">
                                 <span
                                     class="absolute flex items-center justify-center w-6 h-6 bg-blue-100 rounded-full -start-3 ring-8 ring-white">
@@ -434,7 +495,9 @@
                 <section class="mt-10">
                     <h4 class="text-[#212b36] mt-5 font-bold text-[22px] leading-7 text-left mb-3"> Related Products
                     </h4>
-                    <div id="pelatedProducts" class="flex flex-wrap p-2 border border-gray-200"></div>
+                    <div class="h-[500px] overflow-y-auto overflow-x-hidden">
+                        <div id="pelatedProducts" class="flex flex-wrap p-2 border border-gray-200"></div>
+                    </div>
                 </section>
             </div>
     </div>
@@ -447,55 +510,6 @@
 <script src="./js/marketDetail.js"></script>
 
 <script>
-    document.addEventListener('DOMContentLoaded', function () {
-        const tabs = document.querySelectorAll('[data-tabs-target]');
-        const tabContents = document.querySelectorAll('#default-styled-tab-content > div');
-
-        // Set the first tab as active
-        if (tabs.length > 0) {
-            const firstTab = tabs[0];
-            const targetId = firstTab.getAttribute('data-tabs-target');
-
-            // Set the first tab as active
-            firstTab.setAttribute('aria-selected', 'true');
-            firstTab.classList.add('text-blue-600', 'border-blue-600');
-            firstTab.classList.remove('border-transparent');
-
-            // Show the corresponding tab content
-            tabContents.forEach(content => {
-                if (content.id === targetId.substring(1)) {
-                    content.classList.remove('hidden');
-                } else {
-                    content.classList.add('hidden');
-                }
-            });
-        }
-
-        tabs.forEach(tab => {
-            tab.addEventListener('click', function () {
-                const targetId = this.getAttribute('data-tabs-target');
-
-                // Update the active tab
-                tabs.forEach(t => {
-                    t.setAttribute('aria-selected', 'false');
-                    t.classList.remove('text-blue-600', 'border-blue-600');
-                    t.classList.add('border-transparent');
-                });
-                this.setAttribute('aria-selected', 'true');
-                this.classList.add('text-blue-600', 'border-blue-600');
-                this.classList.remove('border-transparent');
-
-                // Show the corresponding tab content
-                tabContents.forEach(content => {
-                    if (content.id === targetId.substring(1)) {
-                        content.classList.remove('hidden');
-                    } else {
-                        content.classList.add('hidden');
-                    }
-                });
-            });
-        });
-    });
 
 
 

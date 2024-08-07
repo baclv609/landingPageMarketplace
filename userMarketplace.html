@@ -72,7 +72,7 @@
         </header>
 
         <main class="container mx-auto m-4">
-            <section class="py-5 px-4">
+            <section class=" px-4">
                 <div class="flex ml-4">
                     <a href="index.html"
                         class="flex items-center py-1 px-4 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:text-blue-700 focus:z-10">
@@ -134,86 +134,48 @@
                             <!-- Card end -->
                         </div>
 
-                        <div class="flex-1 ml-2 w-full sm:w-[calc(100% - 250px)]">
+                        <div
+                            class="flex-1 ml-2 h-[calc(100vh-200px)] overflow-y-auto overflow-x-hidden w-full sm:w-[calc(100% - 250px)]">
                             <div id="card-container" class="flex flex-wrap">
-
-                                <!-- <div class="grow-0 shrink-0 xl:w-1/3 lg:w-1/2 md:w-full sm:w-full">
-                                    <div class="m-2 item-card bg-white text-gray-900 rounded overflow-hidden h-[225px]">
-
-                                        <div class="grid grid-cols-6 pt-6 px-6 h-[74px]">
-                                            <div class="col-span-5 md:col-span-4">
-                                                <div class="flex items-center">
-                                                    <a href="" class="card-icon-link mr-2">
-                                                        <img src="https://via.placeholder.com/50" alt="Card Icon"
-                                                            class="card-icon w-12 h-12 rounded-md border border-gray-300">
-                                                    </a>
-                                                    <div class="card-name flex flex-col">
-                                                        <a href="/marketplace-details"
-                                                            class="card-title text-lg font-semibold text-gray-900 line-clamp-1 cursor-pointer">Tự
-                                                            Động Chia Sẻ Nội Dung Lên Nhiều Nền Tảng</a>
-                                                        <span class="card-creator text-xs text-gray-500">Created by
-                                                            <span
-                                                                class="creator-name text-blue-500 font-bold cursor-pointer">Creator
-                                                                Name</span></span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div>
-                                                // Don't delete this this is for responsive 
-                                            </div>
-                                            
-                                            <div class="col-span-1 md:col-span-1">
-                                                <div class="card-download bg-blue-600 text-white rounded-md p-2 flex items-center justify-center cursor-pointer"
-                                                    onclick="showQuoteDialog()">
-                                                    <span class="material-symbols-outlined text-[20px]">download</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="px-5 pt-[10px] flex flex-col h-[140px]">
-                                            <a href="#">
-                                                <p
-                                                    class="text-sm text-[#637381] line-clamp-2 mb-3 leading-[23px] cursor-pointer">
-                                                Phân nội dung content
-                                                </p>
-                                            </a>
-                                            <div class="flex flex-col mt-2">
-                                                <span class="post-date text-xs text-[#637381]">Post date:
-                                                    2024-08-05</span>
-                                                <hr class="separator border-gray-200 my-2">
-                                                <div class="flex justify-between items-center font-medium">
-                                                    <div class="flex text-xs gap-3 text-[#637381]">
-                                                        <div class="flex items-center">
-                                                            <span class="material-symbols-outlined icon-large">
-                                                                visibility
-                                                            </span>
-                                                            <p class="ml-1">123</p>
-                                                        </div>
-                                                        <div class="flex items-center">
-                                                            <span class="material-symbols-outlined icon-large">
-                                                                download
-                                                            </span>
-                                                            <p class="ml-1">456</p>
-                                                        </div>
-                                                        <div class="flex items-center">
-                                                            <span class="material-symbols-outlined icon-large">
-                                                                grade
-                                                            </span>
-                                                            <p class="ml-1">78</p>
-                                                        </div>
-                                                    </div>
-                                                    <div
-                                                        class="text-sm text-[#5979FE] bg-[#ECF5FF] font-bold rounded px-2 py-1">
-                                                        Free</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div> -->
-
-
+                                <!-- This part is the data output part. -->
                             </div>
+
                         </div>
                     </div>
+
+                    <!-- Pagination -->
+                    <nav class="flex justify-end items-center gap-x-1 mt-5" aria-label="Pagination">
+                        <button type="button"
+                            class="min-h-[38px] min-w-[38px] py-2 px-2.5 inline-flex justify-center items-center gap-x-1.5 text-sm rounded-lg text-gray-800 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none"
+                            aria-label="Previous" disabled="">
+                            <svg class="shrink-0 size-3.5" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path d="m15 18-6-6 6-6"></path>
+                            </svg>
+                            <span>Previous</span>
+                        </button>
+                        <div class="flex items-center gap-x-1">
+                            <button type="button"
+                                class="min-h-[38px] min-w-[38px] flex justify-center items-center bg-gray-200 text-gray-800 py-2 px-3 text-sm rounded-lg focus:outline-none focus:bg-gray-300 disabled:opacity-50 disabled:pointer-events-none"
+                                aria-current="page">1</button>
+                            <button type="button"
+                                class="min-h-[38px] min-w-[38px] flex justify-center items-center text-gray-800 hover:bg-gray-100 py-2 px-3 text-sm rounded-lg focus:outline-none focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none">2</button>
+                            <button type="button"
+                                class="min-h-[38px] min-w-[38px] flex justify-center items-center text-gray-800 hover:bg-gray-100 py-2 px-3 text-sm rounded-lg focus:outline-none focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none">3</button>
+                        </div>
+                        <button type="button"
+                            class="min-h-[38px] min-w-[38px] py-2 px-2.5 inline-flex justify-center items-center gap-x-1.5 text-sm rounded-lg text-gray-800 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none"
+                            aria-label="Next">
+                            <span>Next</span>
+                            <svg class="shrink-0 size-3.5" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path d="m9 18 6-6-6-6"></path>
+                            </svg>
+                        </button>
+                    </nav>
+                    <!-- End Pagination -->
                 </div>
             </section>
 

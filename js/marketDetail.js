@@ -420,7 +420,6 @@ const listCard = [
     },
 ];
 
-
 // Lấy 6 phần tử đầu tiên từ mảng
 const firstSixCards = listCard.slice(0, 6);
 
@@ -431,11 +430,11 @@ const pelatedProducts = document.querySelector('#pelatedProducts');
 console.log(pelatedProducts);
 
 // Lặp qua 6 phần tử đầu tiên và xử lý chúng
-firstSixCards.forEach((card) => {
+listCard.forEach((card) => {
     const cardElementDetail = document.createElement("div");
     cardElementDetail.classList.add("grow-0", "shrink-0", "xl:w-1/3", "xl:basis-1/3", "lg:w-1/2", "lg:basis-1/2", "md:w-full", "md:basis-full", "sm:max-w-full", "sm:basis-full", "w-full", "basis-full");
 
-    cardElementDetail.innerHTML = `
+    cardElementDetail.innerHTML =/*html*/ `
     <div class="m-2 item-card bg-white text-gray-900 rounded overflow-hidden h-[225px] border border-gray-200">
       <!-- card -->
       <div class="flex justify-between items-center pt-6 px-6 h-[74px]">
@@ -444,11 +443,11 @@ firstSixCards.forEach((card) => {
             <img src="${card.icon}" alt="${card.name}-icon" class="card-icon w-[50px] h-[50px] rounded-md border border-gray-300">
           </a>
           <div class="card-name flex flex-col w-[70%]">
-            <a href="/marketplace-details" class="card-title text-lg font-semibold text-gray-900 line-clamp-1 cursor-pointer">${card.name}</a>
-            <span class="card-creator text-xs text-gray-500">Created by <span class="creator-name text-blue-500 font-bold cursor-pointer">${card.createdBy}</span></span>
+            <a href="/marketplace-details" class="card-title text-lg font-semibold text-[#212b36] line-clamp-1 cursor-pointer">${card.name}</a>
+            <span class="text-[#637381] text-[11px] leading-5">Created by <span class="creator-name text-[#5979fe] font-bold cursor-pointer">${card.createdBy}</span></span>
           </div>
         </div>
-        <div class="card-download bg-blue-600 text-white rounded-md p-2 flex items-center justify-center cursor-pointer" onclick="showQuoteDialog()">
+        <div class="bg-[#5979fe] hover:bg-[#79bbff] text-white rounded-md p-2 flex items-center justify-center cursor-pointer" onclick="showQuoteDialog()">
           <span class="material-symbols-outlined text-[20px]">download</span>
         </div>
       </div>
@@ -483,4 +482,90 @@ firstSixCards.forEach((card) => {
     `;
 
     pelatedProducts.appendChild(cardElementDetail);
+});
+
+
+
+document.addEventListener('DOMContentLoaded', function () {
+    const tabs = document.querySelectorAll('[data-tabs-target]');
+    const tabContents = document.querySelectorAll('#default-styled-tab-content > div');
+
+    // Set the first tab as active
+    if (tabs.length > 0) {
+        const firstTab = tabs[0];
+        const targetId = firstTab.getAttribute('data-tabs-target');
+
+        // Set the first tab as active
+        firstTab.setAttribute('aria-selected', 'true');
+        firstTab.classList.add('text-blue-600', 'border-blue-600');
+        firstTab.classList.remove('border-transparent');
+
+        // Show the corresponding tab content
+        tabContents.forEach(content => {
+            if (content.id === targetId.substring(1)) {
+                content.classList.remove('hidden');
+            } else {
+                content.classList.add('hidden');
+            }
+        });
+    }
+
+    tabs.forEach(tab => {
+        tab.addEventListener('click', function () {
+            const targetId = this.getAttribute('data-tabs-target');
+
+            // Update the active tab
+            tabs.forEach(t => {
+                t.setAttribute('aria-selected', 'false');
+                t.classList.remove('text-blue-600', 'border-blue-600');
+                t.classList.add('border-transparent');
+            });
+            this.setAttribute('aria-selected', 'true');
+            this.classList.add('text-blue-600', 'border-blue-600');
+            this.classList.remove('border-transparent');
+
+            // Show the corresponding tab content
+            tabContents.forEach(content => {
+                if (content.id === targetId.substring(1)) {
+                    content.classList.remove('hidden');
+                } else {
+                    content.classList.add('hidden');
+                }
+            });
+        });
+    });
+});
+
+
+// tonggle modal
+// Function to show or hide the modal
+function toggleModal(modalId, action) {
+    const modal = document.getElementById(modalId);
+    const overlay = document.getElementById('overlay'); // Get the overlay element
+
+    if (action === 'show') {
+        modal.classList.remove('hidden');
+        overlay.classList.add('show'); // Add the 'show' class to the overlay element
+    } else {
+        modal.classList.add('hidden');
+        overlay.classList.remove('show'); // Remove the 'show' class from the overlay element
+    }
+}
+
+// Open modal event
+document.querySelector('[data-modal-toggle]').addEventListener('click', function () {
+    toggleModal('static-modal', 'show');
+});
+
+// Close modal event
+document.querySelector('[data-modal-hide]').addEventListener('click', function () {
+    toggleModal('static-modal', 'hide');
+});
+
+// Optional: Close the modal when clicking outside of it
+window.addEventListener('click', function (event) {
+    const modal = document.getElementById('static-modal');
+    if (event.target === modal) {
+        toggleModal('static-modal', 'hide');
+    }
 });
