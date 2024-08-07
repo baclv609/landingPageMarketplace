@@ -433,12 +433,12 @@ listCard.forEach((card) => {
       <!-- card -->
       <div class="flex justify-between items-center pt-6 px-6 h-[74px]">
         <div class="flex items-center">
-          <a href="" class="card-icon-link mr-2">
+          <a href="marketplaceDetail.html" class="card-icon-link mr-2">
             <img src="${card.icon}" alt="${card.name}-icon" class="card-icon w-[50px] h-[50px] rounded-md border border-gray-300">
           </a>
           <div class="card-name flex flex-col w-[70%]">
-            <a href="/marketplace-details" class="card-title text-lg font-semibold text-gray-900 line-clamp-1 cursor-pointer">${card.name}</a>
-            <span class="card-creator text-xs text-gray-500">Created by <span class="creator-name text-blue-500 font-bold cursor-pointer">${card.createdBy}</span></span>
+            <a href="marketplaceDetail.html" class="card-title text-lg font-semibold text-gray-900 line-clamp-1 cursor-pointer">${card.name}</a>
+            <span class="card-creator text-xs text-gray-500">Created by <a href="userMarketplace.html" class="creator-name text-blue-500 font-bold cursor-pointer">${card.createdBy}</a></span>
           </div>
         </div>
         <div class="card-download bg-blue-600 text-white rounded-md p-2 flex items-center justify-center cursor-pointer" onclick="showQuoteDialog()">
@@ -447,7 +447,7 @@ listCard.forEach((card) => {
       </div>
       <!-- desc -->
       <div class="px-5 pt-[10px] flex flex-col h-[140px]">
-        <a href="#">
+        <a href="marketplaceDetail.html">
           <p class="text-sm text-[#637381] line-clamp-2 mb-3 leading-[23px] cursor-pointer break-words">${card.description}</p>
         </a>
         <div class="flex flex-col mt-2">
