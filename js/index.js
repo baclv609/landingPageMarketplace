@@ -426,7 +426,7 @@ const cardContainer = document.getElementById("card-container");
 
 listCard.forEach((card) => {
     const cardElement = document.createElement("div");
-    cardElement.classList.add("grow-0", "shrink-0", "xl:w-1/3", "lg:w-1/2", "md:w-full", "sm:w-full");
+    cardElement.classList.add("grow-0", "shrink-0", "xl:w-1/3", "xl:basis-1/3", "lg:w-1/2", "lg:basis-1/2", "md:w-full", "md:basis-full", "sm:max-w-full", "sm:basis-full", "w-full", "basis-full");
 
     cardElement.innerHTML = `
     <div class="m-2 item-card bg-white text-gray-900 rounded overflow-hidden h-[225px] border border-gray-200">
@@ -448,7 +448,7 @@ listCard.forEach((card) => {
       <!-- desc -->
       <div class="px-5 pt-[10px] flex flex-col h-[140px]">
         <a href="#">
-          <p class="text-sm text-[#637381] line-clamp-2 mb-3 leading-[23px] cursor-pointer">${card.description}</p>
+          <p class="text-sm text-[#637381] line-clamp-2 mb-3 leading-[23px] cursor-pointer break-words">${card.description}</p>
         </a>
         <div class="flex flex-col mt-2">
           <span class="post-date text-xs text-[#637381]">Post date: ${card.postDate}</span>

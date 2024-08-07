@@ -433,7 +433,7 @@ console.log(pelatedProducts);
 // Lặp qua 6 phần tử đầu tiên và xử lý chúng
 firstSixCards.forEach((card) => {
     const cardElementDetail = document.createElement("div");
-    cardElementDetail.classList.add("grow-0", "shrink-0", "xl:w-1/3", "lg:w-1/2", "md:w-full", "sm:w-full");
+    cardElementDetail.classList.add("grow-0", "shrink-0", "xl:w-1/3", "xl:basis-1/3", "lg:w-1/2", "lg:basis-1/2", "md:w-full", "md:basis-full", "sm:max-w-full", "sm:basis-full", "w-full", "basis-full");
 
     cardElementDetail.innerHTML = `
     <div class="m-2 item-card bg-white text-gray-900 rounded overflow-hidden h-[225px] border border-gray-200">
