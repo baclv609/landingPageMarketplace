@@ -471,7 +471,7 @@
                                 <div class="relative">
                                     <!-- Modal header -->
                                     <div class="flex items-center justify-between md:pb-3 rounded">
-                                        <h4 class="text-[26px] font-bold">
+                                        <h4 class="text-[26px] pl-1 font-bold">
                                             Review Product
                                         </h4>
                                         <button type="button"
@@ -502,49 +502,29 @@
                                             tại.
                                         </h3>
 
-                                        <!-- star -->
-                                        <div class="my-2 flex items-center justify-center">
-                                            <svg class=" w-4 h-4 text-yellow-300 ms-1" aria-hidden="true"
-                                                xmlns="http://www.w3.org/2000/svg" fill="currentColor"
-                                                viewBox="0 0 22 20">
-                                                <path
-                                                    d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-                                            </svg>
-                                            <svg class="w-4 h-4 text-yellow-300 ms-1" aria-hidden="true"
-                                                xmlns="http://www.w3.org/2000/svg" fill="currentColor"
-                                                viewBox="0 0 22 20">
-                                                <path
-                                                    d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-                                            </svg>
-                                            <svg class="w-4 h-4 text-yellow-300 ms-1" aria-hidden="true"
-                                                xmlns="http://www.w3.org/2000/svg" fill="currentColor"
-                                                viewBox="0 0 22 20">
-                                                <path
-                                                    d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-                                            </svg>
-                                            <svg class="w-4 h-4 text-yellow-300 ms-1" aria-hidden="true"
-                                                xmlns="http://www.w3.org/2000/svg" fill="currentColor"
-                                                viewBox="0 0 22 20">
-                                                <path
-                                                    d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-                                            </svg>
-                                            <svg class="w-4 h-4 ms-1 text-gray-300 dark:text-gray-500"
-                                                aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                                fill="currentColor" viewBox="0 0 22 20">
-                                                <path
-                                                    d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-                                            </svg>
+                                        <!-- star rating -->
+                                        <div id="star-rating" class="my-2 flex items-center justify-center">
+                                            <span class="material-symbols-outlined cursor-pointer"
+                                                data-rating="1">star</span>
+                                            <span class="material-symbols-outlined cursor-pointer"
+                                                data-rating="2">star</span>
+                                            <span class="material-symbols-outlined cursor-pointer"
+                                                data-rating="3">star</span>
+                                            <span class="material-symbols-outlined cursor-pointer"
+                                                data-rating="4">star</span>
+                                            <span class="material-symbols-outlined cursor-pointer"
+                                                data-rating="5">star</span>
                                         </div>
 
                                         <!-- Modal body -->
-                                        <textarea id="message" rows="4"
-                                            class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:border-0"
+                                        <textarea id="review-text" rows="4"
+                                            class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:outline-none hidden"
                                             placeholder="Leave your review..."></textarea>
 
                                         <!-- Modal footer -->
                                         <button data-modal-hide="tongle-modal-riview" id="send-review-button"
                                             type="button"
-                                            class=" hover:opacity-[0.8] mt-4 mb-1 text-white w-full bg-[#5979fe] font-medium rounded-[4px] text-sm px-5 py-2.5 text-center">Send
+                                            class="hover:opacity-[0.8] mt-4 mb-1 text-white w-full bg-[#5979fe] font-medium rounded-[4px] text-sm px-5 py-2.5 text-center hidden">Send
                                             Review</button>
                                     </form>
                                 </div>
@@ -628,8 +608,10 @@
                 <section class="mt-10">
                     <h4 class="text-[#212b36] mt-5 font-bold text-[22px] leading-7 text-left mb-3"> Related Products
                     </h4>
-                    <div class="h-[500px] overflow-y-auto overflow-x-hidden">
-                        <div id="pelatedProducts" class="flex flex-wrap p-2 border border-gray-200"></div>
+                    <div class="h-[500px] overflow-y-auto overflow-x-hidden p-2 border border-gray-200">
+                        <div class="">
+                            <div id="pelatedProducts" class="flex flex-wrap"></div>
+                        </div>
                     </div>
                 </section>
 

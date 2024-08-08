@@ -600,27 +600,85 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     // Xử lý gửi review
-    sendReviewButton.addEventListener('click', function () {
-        const textarea = document.getElementById('message');
-        const reviewText = textarea.value;
+    // sendReviewButton.addEventListener('click', function () {
+    //     const textarea = document.getElementById('message');
+    //     const reviewText = textarea.value;
 
-        console.log('Review:', reviewText);
+    //     console.log('Review:', reviewText);
 
-        // fetch('/api/send-review', {
-        //     method: 'POST',
-        //     headers: {
-        //         'Content-Type': 'application/json',
-        //     },
-        //     body: JSON.stringify({ review: reviewText }),
-        // })
-        // .then(response => response.json())
-        // .then(data => console.log('Success:', data))
-        // .catch(error => console.error('Error:', error));
+    //     // fetch('/api/send-review', {
+    //     //     method: 'POST',
+    //     //     headers: {
+    //     //         'Content-Type': 'application/json',
+    //     //     },
+    //     //     body: JSON.stringify({ review: reviewText }),
+    //     // })
+    //     // .then(response => response.json())
+    //     // .then(data => console.log('Success:', data))
+    //     // .catch(error => console.error('Error:', error));
 
-        // Đóng modal
+    //     // Đóng modal
+    //     modal.classList.add('hidden');
+    //     overlay.classList.add('hidden');
+    // });
+
+
+    let currentRating = 0;
+    const stars = document.querySelectorAll('#star-rating .material-symbols-outlined');
+    const reviewForm = document.getElementById('review-form');
+    const reviewText = document.getElementById('review-text');
+
+    stars.forEach(star => {
+        star.addEventListener('click', () => {
+            currentRating = parseInt(star.getAttribute('data-rating'));
+            updateStarRating();
+            reviewText.classList.remove('hidden');
+            sendReviewButton.classList.remove('hidden');
+        });
+    });
+
+    sendReviewButton.addEventListener('click', () => {
+        const review = reviewText.value;
+
+        if (currentRating > 0 && review.trim() !== '') {
+            // Submit the review and rating
+            console.log('Rating:', currentRating);
+            console.log('Review:', review);
+
+
+            alert('Your comment was written successfully.');
+            resetReviewForm();
+            reviewText.classList.add('hidden');
+            sendReviewButton.classList.add('hidden');
+            document.getElementById('toggle-modal-review').classList.add('hidden');
+            document.getElementById('overlay').classList.add('hidden');
+        } else {
+            alert('Please provide a rating and review.');
+        }
+    });
+
+    function updateStarRating() {
+        stars.forEach(star => {
+            const starRating = parseInt(star.getAttribute('data-rating'));
+            if (starRating <= currentRating) {
+                star.classList.remove('text-gray-300');
+                star.classList.add('text-yellow-300');
+            } else {
+                star.classList.remove('text-yellow-300');
+                star.classList.add('text-gray-300');
+            }
+        });
+    }
+    // reset Form
+    function resetReviewForm() {
+        currentRating = 0;
+        updateStarRating();
+        reviewText.value = '';
+        reviewText.classList.add('hidden');
+        sendReviewButton.classList.add('hidden');
         modal.classList.add('hidden');
         overlay.classList.add('hidden');
-    });
+    }
 });
 
 
