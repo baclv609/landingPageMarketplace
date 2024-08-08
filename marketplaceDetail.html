@@ -20,6 +20,27 @@
         .material-symbols-outlined {
             font-size: 16px;
         }
+
+        #overlay {
+            transition: opacity 0.3s ease;
+        }
+
+        .item-card-dialog {
+            transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
+                transform 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+            box-shadow: rgba(145, 158, 171, 0.2) 0px 0px 2px 0px,
+                rgba(145, 158, 171, 0.12) 0px 12px 24px -4px;
+            /* Bắt đầu với vị trí ban đầu dưới khi hover */
+            transform: translateY(5px);
+        }
+
+        /* Hiệu ứng hover */
+        .item-card-dialog:hover {
+            transform: translateY(0px);
+            /* Trượt lên trên vị trí ban đầu */
+            box-shadow: rgba(145, 158, 171, 0.2) 0px 4px 12px 0px,
+                rgba(145, 158, 171, 0.12) 0px 16px 24px -4px;
+        }
     </style>
 </head>
 
@@ -30,7 +51,7 @@
             class="sticky top-0 z-10 block w-full max-w-full px-4 py-2 bg-white border rounded-none shadow-md h-max border-white/80 bg-opacity-80 backdrop-blur-2xl backdrop-saturate-200 lg:px-8 lg:py-3">
             <nav>
                 <div class="flex items-center justify-between">
-                    <a href="markerplace.html" class="mr-4 block cursor-pointer flex items-center">
+                    <a href="index.html" class="mr-4 block cursor-pointer flex items-center">
                         <img src="./img/minlogo-collapse.svg" alt="" class="w-[35px]">
                         <span class="font-extrabold text-xl">emLogin</span>
                     </a>
@@ -39,12 +60,12 @@
                         <!-- button login -->
                         <div class="flex items-center gap-x-1">
                             <button
-                                class="px-4 py-2 font-sans text-xs font-bold text-center text-gray-900 uppercase align-middle transition-all rounded-lg select-none hover:bg-gray-900/10 active:bg-gray-900/20 disabled:pointer-events-none disabled:opacity-50"
+                                class="px-4 py-2 font-sans text-xs font-bold text-center text-gray-900 align-middle transition-all rounded-lg select-none hover:bg-gray-900/10 active:bg-gray-900/20 border"
                                 type="button">
-                                <span>Log In</span>
+                                <span>Log in</span>
                             </button>
                             <button
-                                class="rounded-[4px] bg-[#5979fe] from-gray-900 to-gray-800 py-2 px-4 text-center text-xs font-bold uppercase text-white shadow-md shadow-gray-900/10 transition-all hover:shadow-lg hover:shadow-gray-900/20 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50"
+                                class="rounded-[4px] bg-[#5979fe] hover:bg-[#79bbff] py-2 px-4 text-center text-xs font-bold text-white transition-all border"
                                 type="button">
                                 <span>Sign in</span>
                             </button>
@@ -153,7 +174,7 @@
                                     <p class="text-sm">Report</p>
                                 </button>
                                 <button
-                                    class="flex items-center p-1 px-4 text-sm rounded bg-[#5979fe] hover:bg-[#79bbff] text-white border border-gray-300 transition-all">
+                                    class="download-button-itemCard flex items-center p-1 px-4 text-sm rounded bg-[#5979fe] hover:bg-[#79bbff] text-white border border-gray-300 transition-all">
                                     <span class="material-symbols-outlined text-[16px] mr-1">
                                         download
                                     </span>
@@ -191,7 +212,7 @@
                 <!-- Main Content -->
                 <div id="default-styled-tab-content">
                     <!-- overview-detail -->
-                    <div class="my-4" id="overview-detail">
+                    <div class="my-4 h-[432px] overflow-y-auto overflow-x-hidden" id="overview-detail">
                         <h1 class="my-3 font-bold text-xl">HƯỚNG DẪN SỬ DỤNG</h1>
                         <div>
                             <h2 class="font-bold text-xl">LƯU Ý:</h2>
@@ -204,11 +225,12 @@
                     <!-- Review -->
                     <div class="my-4 hidden" id="styled-review">
                         <!-- Modal toggle -->
-                        <button data-modal-target="static-modal" data-modal-toggle="static-modal"
+                        <button data-modal-target="tongle-modal-riview" data-modal-toggle="tongle-modal-riview"
                             class="text-white py-[6px] px-3 bg-[#5979FE] text-sm my-5 rounded">Viết bình
                             luận</button>
 
-                        <div class="p-4 border rounded">
+                        <div class="p-4 border rounded h-[532px] overflow-y-auto overflow-x-hidden">
+                            <!-- item 1 -->
                             <div class="w-full mx-auto border px-6 py-4 rounded-lg mb-5">
                                 <div class="flex justify-between mb-3">
                                     <div class="flex items-center">
@@ -267,24 +289,24 @@
                                 </p>
                                 <div class="flex items-center font-semibold">
                                     <div class="flex items-center mr-4">
-                                        <div class="text-[14px] text-[#555555] hover:text-gray-700 mr-4">
+                                        <div class="text-[14px] text-[#555555] hover:text-gray-700 mr-4 cursor-pointer">
                                             Like
                                         </div>
-                                        <div class="text-[14px] text-[#555555] hover:text-gray-700">
+                                        <div class="text-[14px] text-[#555555] hover:text-gray-700 cursor-pointer">
                                             Reply
                                         </div>
                                     </div>
                                     <div class="flex items-center">
-                                        <div class="text-[14px] text-[#555555] hover:text-gray-700 mr-4">
+                                        <div class="text-[14px] text-[#555555] hover:text-gray-700 mr-4 cursor-pointer">
                                             Report
                                         </div>
-                                        <div class="text-[14px] text-[#555555] hover:text-gray-700">
+                                        <div class="text-[14px] text-[#555555] hover:text-gray-700 cursor-pointer">
                                             Share
                                         </div>
                                     </div>
                                 </div>
                             </div>
-
+                            <!-- item 2 -->
                             <div class="w-full mx-auto border px-6 py-4 rounded-lg mb-5">
                                 <div class="flex justify-between mb-3">
                                     <div class="flex items-center">
@@ -341,50 +363,119 @@
                                 </p>
                                 <div class="flex items-center font-semibold">
                                     <div class="flex items-center mr-4">
-                                        <div class="text-[14px] text-[#555555] hover:text-gray-700 mr-4">
+                                        <div class="text-[14px] text-[#555555] hover:text-gray-700 mr-4 cursor-pointer">
                                             Like
                                         </div>
-                                        <div class="text-[14px] text-[#555555] hover:text-gray-700">
+                                        <div class="text-[14px] text-[#555555] hover:text-gray-700 cursor-pointer">
                                             Reply
                                         </div>
                                     </div>
                                     <div class="flex items-center">
-                                        <div class="text-[14px] text-[#555555] hover:text-gray-700 mr-4">
+                                        <div class="text-[14px] text-[#555555] hover:text-gray-700 mr-4 cursor-pointer">
                                             Report
                                         </div>
-                                        <div class="text-[14px] text-[#555555] hover:text-gray-700">
+                                        <div class="text-[14px] text-[#555555] hover:text-gray-700 cursor-pointer">
                                             Share
                                         </div>
                                     </div>
                                 </div>
                             </div>
 
+                            <!-- item 3 -->
+                            <div class="w-full mx-auto border px-6 py-4 rounded-lg mb-5">
+                                <div class="flex justify-between mb-3">
+                                    <div class="flex items-center">
+                                        <img src="https://flowbite.com/docs/images/people/profile-picture-1.jpg"
+                                            alt="comment.name" class="w-12 h-12 rounded-full mr-4" />
+                                        <div class="flex flex-col">
+                                            <!-- name -->
+                                            <div class="ml-1 text-lg font-medium text-gray-800">
+                                                Nguyễn Văn A
+                                            </div>
+
+                                            <!-- rate -->
+                                            <div class="flex items-center">
+                                                <svg class="w-4 h-4 text-yellow-300 ms-1" aria-hidden="true"
+                                                    xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                                                    viewBox="0 0 22 20">
+                                                    <path
+                                                        d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                                                </svg>
+                                                <svg class="w-4 h-4 text-yellow-300 ms-1" aria-hidden="true"
+                                                    xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                                                    viewBox="0 0 22 20">
+                                                    <path
+                                                        d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                                                </svg>
+                                                <svg class="w-4 h-4 text-yellow-300 ms-1" aria-hidden="true"
+                                                    xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                                                    viewBox="0 0 22 20">
+                                                    <path
+                                                        d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                                                </svg>
+                                                <svg class="w-4 h-4 text-yellow-300 ms-1" aria-hidden="true"
+                                                    xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                                                    viewBox="0 0 22 20">
+                                                    <path
+                                                        d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                                                </svg>
+                                                <svg class="w-4 h-4 ms-1 text-gray-300 dark:text-gray-500"
+                                                    aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                                    fill="currentColor" viewBox="0 0 22 20">
+                                                    <path
+                                                        d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                                                </svg>
+                                            </div>
+                                            <!-- time -->
+                                            <div class="ml-1 text-gray-500 text-[12px]">
+                                                4 giờ trước
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p class="text-[14px] leading-relaxed mb-3 w-full 2xl:w-4/5 font-normal">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima praesentium, est
+                                    pariatur quos incidunt maxime cum unde reprehenderit nisi accusamus beatae minus
+                                    error cumque consectetur in veniam atque ipsa. Ad!
+                                </p>
+                                <div class="flex items-center font-semibold">
+                                    <div class="flex items-center mr-4">
+                                        <div class="text-[14px] text-[#555555] hover:text-gray-700 mr-4 cursor-pointer">
+                                            Like
+                                        </div>
+                                        <div class="text-[14px] text-[#555555] hover:text-gray-700 cursor-pointer">
+                                            Reply
+                                        </div>
+                                    </div>
+                                    <div class="flex items-center">
+                                        <div class="text-[14px] text-[#555555] hover:text-gray-700 mr-4 cursor-pointer">
+                                            Report
+                                        </div>
+                                        <div class="text-[14px] text-[#555555] hover:text-gray-700 cursor-pointer">
+                                            Share
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
 
-
-
-
-                        <!-- <button data-modal-target="static-modal" data-modal-toggle="static-modal"
-                            class="block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-                            type="button">
-                            Toggle modal
-                        </button> -->
-
                         <!-- Main modal -->
-                        <div id="static-modal" data-modal-backdrop="static" tabindex="-1" aria-hidden="true"
-                            class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
-                            <div class="relative p-4 w-full max-w-2xl max-h-full">
+                        <div id="tongle-modal-riview" tabindex="-1" aria-hidden="true"
+                            class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center m-auto w-[800px] md:inset-0 h-[700px] max-h-full p-4">
+
+                            <div id="overlay" class="hidden fixed inset-0 bg-gray-800 bg-opacity-50"></div>
+
+                            <div class="relative p-3 bg-white rounded-md">
                                 <!-- Modal content -->
-                                <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+                                <div class="relative">
                                     <!-- Modal header -->
-                                    <div
-                                        class="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600">
-                                        <h3 class="text-xl font-semibold text-gray-900 dark:text-white">
-                                            Static modal
-                                        </h3>
+                                    <div class="flex items-center justify-between md:pb-3 rounded">
+                                        <h4 class="text-[26px] font-bold">
+                                            Review Product
+                                        </h4>
                                         <button type="button"
-                                            class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
-                                            data-modal-hide="static-modal">
+                                            class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center"
+                                            data-modal-hide="tongle-modal-riview">
                                             <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
                                                 fill="none" viewBox="0 0 14 14">
                                                 <path stroke="currentColor" stroke-linecap="round"
@@ -394,26 +485,67 @@
                                             <span class="sr-only">Close modal</span>
                                         </button>
                                     </div>
-                                    <!-- Modal body -->
-                                    <div class="p-4 md:p-5 space-y-4">
-                                        <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">
-                                            With less than a month to go before the European Union enacts new consumer
-                                            privacy laws for its citizens, companies around the world are updating their
-                                            terms of service agreements to comply.
-                                        </p>
-                                        <!-- <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">
-                      The European Union’s General Data Protection Regulation (G.D.P.R.) goes into effect on May 25 and is meant to ensure a common set of data rights in the European Union. It requires organizations to notify users as soon as possible of high-risk data breaches that could personally affect them.
-                  </p> -->
-                                    </div>
-                                    <!-- Modal footer -->
-                                    <div
-                                        class="flex items-center p-4 md:p-5 border-t border-gray-200 rounded-b dark:border-gray-600">
-                                        <button data-modal-hide="static-modal" type="button"
-                                            class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700">I
-                                            accept</button>
-                                        <button data-modal-hide="static-modal" type="button"
-                                            class="py-2.5 px-5 ms-3 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100">Decline</button>
-                                    </div>
+
+                                    <form class="max-w-[500px] flex flex-col mx-auto justify-center items-center">
+                                        <!-- title card  -->
+                                        <img class="rounded-lg  max-w-[80px] max-h-[80px]"
+                                            src="https://play-lh.googleusercontent.com/VRMWkE5p3CkWhJs6nv-9ZsLAs1QOg5ob1_3qg-rckwYW7yp1fMrYZqnEFpk0IoVP4LM"
+                                            alt="">
+
+                                        <h3 class="text-lg mt-5 text-center font-medium">
+                                            Tự
+                                            động
+                                            đăng
+                                            xuất
+                                            khỏi tài khoản Facebook trên tất cả các thiết bị trừ phiên đăng nhập hiện
+                                            tại.
+                                        </h3>
+
+                                        <!-- star -->
+                                        <div class="my-2 flex items-center justify-center">
+                                            <svg class=" w-4 h-4 text-yellow-300 ms-1" aria-hidden="true"
+                                                xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                                                viewBox="0 0 22 20">
+                                                <path
+                                                    d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                                            </svg>
+                                            <svg class="w-4 h-4 text-yellow-300 ms-1" aria-hidden="true"
+                                                xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                                                viewBox="0 0 22 20">
+                                                <path
+                                                    d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                                            </svg>
+                                            <svg class="w-4 h-4 text-yellow-300 ms-1" aria-hidden="true"
+                                                xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                                                viewBox="0 0 22 20">
+                                                <path
+                                                    d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                                            </svg>
+                                            <svg class="w-4 h-4 text-yellow-300 ms-1" aria-hidden="true"
+                                                xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                                                viewBox="0 0 22 20">
+                                                <path
+                                                    d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                                            </svg>
+                                            <svg class="w-4 h-4 ms-1 text-gray-300 dark:text-gray-500"
+                                                aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                                fill="currentColor" viewBox="0 0 22 20">
+                                                <path
+                                                    d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                                            </svg>
+                                        </div>
+
+                                        <!-- Modal body -->
+                                        <textarea id="message" rows="4"
+                                            class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:border-0"
+                                            placeholder="Leave your review..."></textarea>
+
+                                        <!-- Modal footer -->
+                                        <button data-modal-hide="tongle-modal-riview" id="send-review-button"
+                                            type="button"
+                                            class="mt-4 mb-1 text-white w-full bg-[#5979fe] hover:bg-[#79bbff] font-medium rounded-[4px] text-sm px-5 py-2.5 text-center">Send
+                                            Review</button>
+                                    </form>
                                 </div>
                             </div>
                         </div>
@@ -423,10 +555,10 @@
 
 
                     <!-- Changelog -->
-                    <div class="my-4 hidden h-[532px] overflow-y-auto overflow-x-hidden" id="styled-changelog">
+                    <div class="my-4 hidden p-5 h-[432px] overflow-y-auto overflow-x-hidden" id="styled-changelog">
 
-                        <ol class="relative border-s border-gray-200 ">
-                            <li class="mb-10 ms-6">
+                        <ol class="relative border-s">
+                            <li class="mb-10 ms-6 w-full">
                                 <span
                                     class="absolute flex items-center justify-center w-6 h-6 bg-blue-100 rounded-full -start-3 ring-8 ring-white">
                                     <svg class="w-2.5 h-2.5 text-blue-800" aria-hidden="true"
@@ -455,7 +587,7 @@
                                             d="M18 12h-2.55l-2.975 2.975a3.5 3.5 0 0 1-4.95 0L4.55 12H2a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-4a2 2 0 0 0-2-2Zm-3 5a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z" />
                                     </svg> Download</a>
                             </li>
-                            <li class="mb-10 ms-6">
+                            <li class="mb-10 ms-6 w-full">
                                 <span
                                     class="absolute flex items-center justify-center w-6 h-6 bg-blue-100 rounded-full -start-3 ring-8 ring-white">
                                     <svg class="w-2.5 h-2.5 text-blue-800 dark:text-blue-300" aria-hidden="true"
@@ -472,7 +604,7 @@
                                     even as
                                     we update the project.</p>
                             </li>
-                            <li class="ms-6">
+                            <li class="ms-6 w-full">
                                 <span
                                     class="absolute flex items-center justify-center w-6 h-6 bg-blue-100 rounded-full -start-3 ring-8 ring-white">
                                     <svg class="w-2.5 h-2.5 text-blue-800" aria-hidden="true"
@@ -499,6 +631,49 @@
                         <div id="pelatedProducts" class="flex flex-wrap p-2 border border-gray-200"></div>
                     </div>
                 </section>
+
+
+                <!-- Modal HTML -->
+                <div id="quoteDialog" tabindex="-1"
+                    class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center m-auto rounded-[4px] w-[85%] max-w-[1100px] md:inset-0 max-h-[480px]">
+                    <!-- overlay -->
+                    <div id="overlayDetail" class="hidden fixed inset-0 bg-gray-800 bg-opacity-50"></div>
+
+                    <div class="relative p-6 bg-white rounded-md">
+                        <!-- Modal content -->
+                        <div class="relative">
+                            <!-- Modal header -->
+                            <div class="rounded mb-[30px]">
+                                <div class="flex justify-center items-center flex-col">
+                                    <h2 class="text-xl font-semibold text-center text-gray-800">Payment Confirmation
+                                    </h2>
+                                    <p class="text-sm text-gray-600 text-center">Please review the details below and
+                                        proceed
+                                        with the payment.</p>
+                                </div>
+                                <div class="absolute top-0 right-0">
+                                    <button type="button"
+                                        class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center"
+                                        data-modal-close="close-quoteDialog">
+                                        <span class="material-symbols-outlined">
+                                            close
+                                        </span>
+                                        <span class="sr-only">Close modal</span>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Modal body -->
+                            <div id="modal-content"
+                                class="p-0 max-h-[calc(-540px + 100vh)] overflow-y-auto overflow-x-hidden">
+                                <div id="diaLogPrice" class="flex flex-wrap">
+                                    <!-- Content will be dynamically injected here -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- end Modal -->
             </div>
     </div>
 
@@ -509,10 +684,5 @@
 
 <script src="./js/marketDetail.js"></script>
 
-<script>
-
-
-
-</script>
 
 </html>

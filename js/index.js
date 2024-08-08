@@ -1,5 +1,6 @@
 const listCard = [
     {
+        id: 1,
         name: 'Tự Động Thêm Thông Báo Google Alert',
         icon: 'https://static.vecteezy.com/system/resources/thumbnails/018/930/698/small/facebook-logo-facebook-icon-transparent-free-png.png',
         description:
@@ -14,11 +15,12 @@ const listCard = [
         star: 4.9,
     },
     {
+        id: 2,
         name: 'Google Analytics',
         icon: 'https://cdn1.iconfinder.com/data/icons/google-s-logo/150/Google_Icons-09-512.png',
         description:
             'Đây là công cụ hữu ích cho việc theo dõi danh tiếng thương hiệu, nghiên cứu thị trường, hoặc đơn giản là cập nhật thông tin cá nhân. Chỉ cần thiết lập một từ khóa, Google Alerts sẽ gửi email thông báo mỗi khi có thông tin mới xuất hiện trên web, giúp người dùng luôn cập nhật kịp thời về các xu hướng, tin tức hoặc sự kiện liên quan.',
-        price: 0, // Note: It seems like there is a typo here. Should be 'Free' or another valid price.
+        price: 0,
         disabled: true,
         deletable: false,
         createdBy: 'MinhNguyen',
@@ -28,6 +30,7 @@ const listCard = [
         star: 4.5,
     },
     {
+        id: 3,
         name: 'Tự Động Đăng Bài Hàng Loạt Vào Page',
         icon: 'https://play-lh.googleusercontent.com/lMoItBgdPPVDJsNOVtP26EKHePkwBg-PkuY9NOrc-fumRtTFP4XhpUNk_22syN4Datc=w240-h480-rw',
         description:
@@ -42,6 +45,7 @@ const listCard = [
         star: 4.2,
     },
     {
+        id: 4,
         name: 'Tự Động Chia Sẻ Nội Dung Lên Nhiều Nền Tảng',
         icon: 'https://cdn1.iconfinder.com/data/icons/google-s-logo/150/Google_Icons-09-512.png',
         description:
@@ -56,6 +60,7 @@ const listCard = [
         star: 4.8,
     },
     {
+        id: 5,
         name: 'Tối Ưu Hóa Hình Ảnh Cho Web',
         icon: 'https://play-lh.googleusercontent.com/VRMWkE5p3CkWhJs6nv-9ZsLAs1QOg5ob1_3qg-rckwYW7yp1fMrYZqnEFpk0IoVP4LM',
         description:
@@ -70,6 +75,7 @@ const listCard = [
         star: 4.7,
     },
     {
+        id: 6,
         name: 'Theo Dõi Tương Tác Trên Mạng Xã Hội',
         icon: 'https://play-lh.googleusercontent.com/VRMWkE5p3CkWhJs6nv-9ZsLAs1QOg5ob1_3qg-rckwYW7yp1fMrYZqnEFpk0IoVP4LM',
         description:
@@ -84,6 +90,7 @@ const listCard = [
         star: 4.6,
     },
     {
+        id: 7,
         name: 'Quản Lý Chiến Dịch Email Marketing',
         icon: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4CSB7TNKwXb76eyMrDzFCPVxp60llGLFPDQ&s',
         description:
@@ -98,6 +105,7 @@ const listCard = [
         star: 4.9,
     },
     {
+        id: 8,
         name: 'Tối Ưu Hóa Trang Web Cho SEO',
         icon: 'https://cdn1.iconfinder.com/data/icons/google-s-logo/150/Google_Icons-09-512.png',
         description:
@@ -112,6 +120,7 @@ const listCard = [
         star: 4.4,
     },
     {
+        id: 9,
         name: 'Quản Lý Nội Dung Trên Nhiều Kênh',
         icon: 'https://cdn1.iconfinder.com/data/icons/google-s-logo/150/Google_Icons-09-512.png',
         description:
@@ -126,6 +135,7 @@ const listCard = [
         star: 4.7,
     },
     {
+        id: 10,
         name: 'Phân Tích Hành Vi Người Dùng',
         icon: 'https://cdn1.iconfinder.com/data/icons/google-s-logo/150/Google_Icons-09-512.png',
         description:
@@ -140,6 +150,7 @@ const listCard = [
         star: 4.3,
     },
     {
+        id: 11,
         name: 'Automated Social Media Scheduler',
         icon: 'https://example.com/icons/social-media-scheduler.png',
         description:
@@ -154,6 +165,7 @@ const listCard = [
         star: 4.6,
     },
     {
+        id: 12,
         name: 'Content Management System Integration',
         icon: 'https://example.com/icons/cms-integration.png',
         description:
@@ -162,262 +174,167 @@ const listCard = [
         disabled: false,
         deletable: true,
         createdBy: 'TechInnovate',
-        postDate: '2024-07-28',
-        views: '1200',
-        download: '55',
+        postDate: '2024-05-15',
+        views: '1.2k',
+        download: '77',
         star: 4.8,
     },
     {
-        name: 'AI-Powered Customer Support Chatbot',
-        icon: 'https://example.com/icons/chatbot.png',
+        id: 13,
+        name: 'SEO Keyword Research Tool',
+        icon: 'https://example.com/icons/seo-keyword-research.png',
         description:
-            'Advanced chatbot utilizing AI to enhance customer support interactions.',
-        price: 599,
+            'Tool to conduct keyword research for improving SEO rankings.',
+        price: 199,
         disabled: false,
         deletable: true,
-        createdBy: 'AIChat Solutions',
-        postDate: '2024-07-27',
-        views: '1500',
-        download: '72',
-        star: 4.9,
-    },
-    {
-        name: 'Sales Funnel Optimization Tool',
-        icon: 'https://example.com/icons/sales-funnel.png',
-        description:
-            'Tool to analyze and optimize sales funnels for increased conversions.',
-        price: 499,
-        disabled: false,
-        deletable: true,
-        createdBy: 'ConversionXpert',
-        postDate: '2024-07-26',
+        createdBy: 'SEOExpert',
+        postDate: '2024-03-22',
         views: '950',
-        download: '63',
-        star: 4.7,
-    },
-    {
-        name: 'E-commerce Analytics Dashboard',
-        icon: 'https://example.com/icons/ecommerce-analytics.png',
-        description: 'Dashboard for analyzing e-commerce performance and metrics.',
-        price: 349,
-        disabled: false,
-        deletable: true,
-        createdBy: 'EcommerceInsights',
-        postDate: '2024-07-25',
-        views: '1100',
-        download: '48',
+        download: '54',
         star: 4.5,
     },
     {
-        name: 'Automated Email Campaign Manager',
-        icon: 'https://example.com/icons/email-campaign.png',
+        id: 14,
+        name: 'Email Campaign Analyzer',
+        icon: 'https://example.com/icons/email-campaign-analyzer.png',
         description:
-            'Tool to manage and automate email marketing campaigns effectively.',
-        price: 449,
+            'Analyze email campaigns for better performance and engagement.',
+        price: 149,
         disabled: false,
         deletable: true,
-        createdBy: 'EmailMarketingGenius',
-        postDate: '2024-07-24',
-        views: '1300',
-        download: '58',
-        star: 4.8,
-    },
-    {
-        name: 'Website Speed Optimization Service',
-        icon: 'https://example.com/icons/website-speed.png',
-        description:
-            'Service to optimize website speed for better user experience and SEO.',
-        price: 299,
-        disabled: false,
-        deletable: true,
-        createdBy: 'SpeedOptimize',
-        postDate: '2024-07-23',
-        views: '900',
-        download: '50',
-        star: 4.6,
-    },
-    {
-        name: 'Remote Team Collaboration Tool',
-        icon: 'https://example.com/icons/team-collaboration.png',
-        description:
-            'Tool for enhancing collaboration among remote teams with advanced features.',
-        price: 399,
-        disabled: false,
-        deletable: true,
-        createdBy: 'RemoteWorkTools',
-        postDate: '2024-07-22',
-        views: '1000',
-        download: '60',
-        star: 4.7,
-    },
-    {
-        name: 'Lead Generation Dashboard',
-        icon: 'https://example.com/icons/lead-generation.png',
-        description:
-            'Dashboard for tracking and managing leads across multiple channels.',
-        price: 399,
-        disabled: false,
-        deletable: true,
-        createdBy: 'LeadGenX',
-        postDate: '2024-07-21',
-        views: '950',
-        download: '55',
-        star: 4.7,
-    },
-    {
-        name: 'Social Media Analytics Platform',
-        icon: 'https://example.com/icons/social-media-analytics.png',
-        description:
-            'Platform for analyzing performance and metrics across social media platforms.',
-        price: 499,
-        disabled: false,
-        deletable: true,
-        createdBy: 'SocialAnalyticsPro',
-        postDate: '2024-07-20',
-        views: '1200',
-        download: '70',
-        star: 4.8,
-    },
-    {
-        name: 'Content Personalization Tool',
-        icon: 'https://example.com/icons/content-personalization.png',
-        description:
-            'Tool to personalize content based on user preferences and behavior.',
-        price: 449,
-        disabled: false,
-        deletable: true,
-        createdBy: 'PersonalizeX',
-        postDate: '2024-07-19',
-        views: '1100',
+        createdBy: 'EmailGuru',
+        postDate: '2024-02-10',
+        views: '1k',
         download: '62',
         star: 4.7,
     },
     {
-        name: 'SEO Audit and Optimization Tool',
-        icon: 'https://example.com/icons/seo-audit.png',
+        id: 15,
+        name: 'Web Performance Monitoring',
+        icon: 'https://example.com/icons/web-performance-monitoring.png',
         description:
-            'Tool to audit and optimize websites for improved search engine rankings.',
-        price: 399,
-        disabled: false,
-        deletable: true,
-        createdBy: 'SEOGenius',
-        postDate: '2024-07-18',
-        views: '1000',
-        download: '54',
-        star: 4.6,
-    },
-    {
-        name: 'Customer Feedback Management System',
-        icon: 'https://example.com/icons/feedback-management.png',
-        description:
-            'System for collecting and managing customer feedback to improve products/services.',
-        price: 349,
-        disabled: false,
-        deletable: true,
-        createdBy: 'FeedbackMaster',
-        postDate: '2024-07-17',
-        views: '900',
-        download: '48',
-        star: 4.5,
-    },
-    {
-        name: 'AI-Powered Content Generation Tool',
-        icon: 'https://example.com/icons/content-generation.png',
-        description:
-            'Tool utilizing AI to generate high-quality content based on specified parameters.',
-        price: 599,
-        disabled: false,
-        deletable: true,
-        createdBy: 'AIGenX',
-        postDate: '2024-07-16',
-        views: '1400',
-        download: '75',
-        star: 4.9,
-    },
-    {
-        name: 'Video Content Management Platform',
-        icon: 'https://example.com/icons/video-management.png',
-        description:
-            'Platform for managing and optimizing video content across various platforms.',
-        price: 449,
-        disabled: false,
-        deletable: true,
-        createdBy: 'VideoXpert',
-        postDate: '2024-07-15',
-        views: '1300',
-        download: '65',
-        star: 4.8,
-    },
-    {
-        name: 'CRM Integration and Automation Tool',
-        icon: 'https://example.com/icons/crm-integration.png',
-        description:
-            'Tool to integrate and automate CRM processes for enhanced productivity.',
-        price: 499,
-        disabled: false,
-        deletable: true,
-        createdBy: 'CRMAutomation',
-        postDate: '2024-07-14',
-        views: '1200',
-        download: '60',
-        star: 4.7,
-    },
-    {
-        name: 'Blockchain Integration Service',
-        icon: 'https://example.com/icons/blockchain-integration.png',
-        description:
-            'Service to integrate blockchain technology into existing business processes.',
-        price: 599,
-        disabled: false,
-        deletable: true,
-        createdBy: 'BlockchainTech',
-        postDate: '2024-07-13',
-        views: '1100',
-        download: '55',
-        star: 4.6,
-    },
-    {
-        name: 'Data Analytics Dashboard',
-        icon: 'https://example.com/icons/data-analytics.png',
-        description:
-            'Dashboard for analyzing and visualizing data for informed business decisions.',
-        price: 399,
-        disabled: false,
-        deletable: true,
-        createdBy: 'DataInsights',
-        postDate: '2024-07-12',
-        views: '1000',
-        download: '50',
-        star: 4.5,
-    },
-    {
-        name: 'Cloud Computing Solutions',
-        icon: 'https://example.com/icons/cloud-computing.png',
-        description:
-            'Solutions for deploying and managing cloud infrastructure and services.',
-        price: 499,
-        disabled: false,
-        deletable: true,
-        createdBy: 'CloudX',
-        postDate: '2024-07-11',
-        views: '950',
-        download: '45',
+            'Monitor and improve web performance to enhance user experience.',
+        price: 249,
+        disabled: true,
+        deletable: false,
+        createdBy: 'WebTech',
+        postDate: '2024-01-20',
+        views: '800',
+        download: '35',
         star: 4.4,
     },
     {
-        name: 'Automated Data Backup Service',
-        icon: 'https://example.com/icons/data-backup.png',
+        id: 16,
+        name: 'Customer Feedback Collector',
+        icon: 'https://example.com/icons/customer-feedback-collector.png',
         description:
-            'Service for automating data backup processes to secure and reliable storage.',
+            'Tool to collect and analyze customer feedback effectively.',
+        price: 99,
+        disabled: false,
+        deletable: true,
+        createdBy: 'CustomerInsight',
+        postDate: '2024-04-18',
+        views: '1.1k',
+        download: '44',
+        star: 4.6,
+    },
+    {
+        id: 17,
+        name: 'Competitive Analysis Tool',
+        icon: 'https://example.com/icons/competitive-analysis.png',
+        description:
+            'Analyze competitors to stay ahead in the market.',
         price: 299,
         disabled: false,
         deletable: true,
-        createdBy: 'BackupPro',
-        postDate: '2024-07-10',
-        views: '900',
-        download: '40',
-        star: 4.3,
+        createdBy: 'MarketResearcher',
+        postDate: '2024-06-05',
+        views: '950',
+        download: '38',
+        star: 4.7,
     },
+    {
+        id: 18,
+        name: 'Product Launch Manager',
+        icon: 'https://example.com/icons/product-launch-manager.png',
+        description:
+            'Manage and plan product launches efficiently.',
+        price: 399,
+        disabled: false,
+        deletable: true,
+        createdBy: 'LaunchMaster',
+        postDate: '2024-07-15',
+        views: '1.3k',
+        download: '52',
+        star: 4.8,
+    },
+    {
+        id: 19,
+        name: 'Ad Campaign Optimizer',
+        icon: 'https://example.com/icons/ad-campaign-optimizer.png',
+        description:
+            'Optimize ad campaigns for better ROI.',
+        price: 249,
+        disabled: true,
+        deletable: false,
+        createdBy: 'AdExpert',
+        postDate: '2024-08-01',
+        views: '700',
+        download: '29',
+        star: 4.5,
+    },
+    {
+        id: 20,
+        name: 'Social Media Analytics Dashboard',
+        icon: 'https://example.com/icons/social-media-analytics.png',
+        description:
+            'Dashboard to visualize and analyze social media metrics.',
+        price: 199,
+        disabled: false,
+        deletable: true,
+        createdBy: 'AnalyticsPro',
+        postDate: '2024-09-10',
+        views: '1.5k',
+        download: '61',
+        star: 4.6,
+    }
+];
+
+const diaLogData = [
+    {
+        title: 'EMAIL MARKETING',
+        features: [
+            '60.000 email quảng cáo',
+            '10.000 liên hệ lưu trữ'
+        ],
+        price: '2.900.000',
+    },
+    {
+        title: 'STATER',
+        features: [
+            '60.000 email quảng cáo',
+            '10.000 liên hệ lưu trữ',
+            '10 kịch bản tự động'
+        ],
+        price: '2.900.000',
+    },
+    {
+        title: 'STANDARD',
+        features: [
+            '80.000 email quảng cáo',
+            '20.000 liên hệ lưu trữ',
+        ],
+        price: '15.900.000',
+    },
+    {
+        title: 'PROFESSIONAL',
+        features: [
+            '90.000 email quảng cáo',
+            '30.000 liên hệ lưu trữ',
+        ],
+        price: '31.900.000',
+    }
 ];
 console.log(listCard.length);
 
@@ -427,6 +344,7 @@ const cardContainer = document.getElementById("card-container");
 listCard.forEach((card) => {
     const cardElement = document.createElement("div");
     cardElement.classList.add("grow-0", "shrink-0", "xl:w-1/3", "xl:basis-1/3", "lg:w-1/2", "lg:basis-1/2", "md:w-full", "md:basis-full", "sm:max-w-full", "sm:basis-full", "w-full", "basis-full");
+    cardElement.setAttribute("data-id", card.id); // Thêm thuộc tính data-id
 
     cardElement.innerHTML =/*html*/ `
     <div class="m-2 item-card bg-white rounded overflow-hidden h-[225px] border border-gray-200">
@@ -438,12 +356,12 @@ listCard.forEach((card) => {
           </a>
           <div class="card-name flex flex-col w-[70%]">
             <a href="marketplaceDetail.html" class="card-title text-lg font-semibold text-[#212b36] line-clamp-1 cursor-pointer">${card.name}</a>
-            <span class="text-[#637381] text-[11px] leading-5">Created by <a href="userMarketplace.html" class="creator-name text-blue-500 font-bold cursor-pointer">${card.createdBy}</a></span>
+            <span class="text-[#637381] text-[11px] leading-5">Created by <a href="userMarketplace.html" class="creator-name text-[#5979fe] font-bold cursor-pointer">${card.createdBy}</a></span>
           </div>
         </div>
-        <div class="bg-[#5979fe] hover:bg-[#79bbff] text-white rounded-md p-2 flex items-center justify-center cursor-pointer" onclick="showQuoteDialog()">
+        <button class="bg-[#5979fe] hover:bg-[#79bbff] text-white rounded-md p-2 flex items-center justify-center cursor-pointer download-button-itemCard">
           <span class="material-symbols-outlined text-[20px]">download</span>
-        </div>
+        </button>
       </div>
       <!-- desc -->
       <div class="px-5 pt-[10px] flex flex-col h-[140px]">
@@ -476,4 +394,83 @@ listCard.forEach((card) => {
   `;
 
     cardContainer.appendChild(cardElement);
+});
+
+// Thêm sự kiện cho tất cả các nút tải xuống
+document.addEventListener('DOMContentLoaded', function () {
+    const modal = document.getElementById('quoteDialog');
+    const overlay = document.getElementById('overlay');
+
+    const closeQuoteDialog = document.querySelector('[data-modal-close="close-quoteDialog"]');
+
+    document.querySelectorAll('.download-button-itemCard').forEach(button => {
+        button.addEventListener('click', async () => {
+            // Hiển thị modal
+            console.log('click', closeQuoteDialog);
+
+            modal.classList.remove('hidden');
+            overlay.classList.remove('hidden');
+            console.log('Modal is displayed');
+
+            // Gọi API để lấy dữ liệu
+            // const response = await fetch('');
+            // const data = await response.json();
+
+            // Hiển thị nội dung trong modal
+            // const modalContent = document.getElementById('modal-content');
+            // modalContent.innerHTML = ''; // Xóa nội dung cũ
+
+        });
+    });
+
+    closeQuoteDialog.addEventListener('click', () => {
+        // Ẩn modal và overlay
+        modal.classList.add('hidden');
+        overlay.classList.add('hidden');
+    });
+});
+
+
+
+// dialog
+const diaLogPrice = document.getElementById('diaLogPrice');
+diaLogData.forEach(item => {
+    const card = document.createElement('div');
+    card.className = 'grow-0 shrink-0 xl:basis-1/4 xl:max-w-1/4 lg:basis-1/3 lg:max-w-1/3 md:basis-1/2 md:max-w-1/2 sm:basis-full sm:max-w-full w-full';
+
+    card.innerHTML = /*html*/ `
+      <div class="item-card-dialog p-5 m-[10px] border rounded-[6px]">
+        <div class="flex flex-col gap-y-[18px]">
+          <div class="flex flex-col justify-between h-full">
+            <div>
+              <div class="w-full">
+                <h3 class="text-lg font-semibold mb-4">${item.title}</h3>
+                <div class="mb-4 flex flex-col h-[80px]">
+                    ${item.features.map(feature => `
+                    <div class="flex items-center mb-2 text-sm">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-green-500 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                        </svg>
+                        <span>${feature}</span>
+                    </div>
+                    `).join('')}
+                </div>
+              </div>
+              <div class="flex flex-col">
+                <p class="text-[28px] font-bold">${item.price}</p>
+                <p class="min-h-[20px]">VND/year</p>
+              </div>
+            </div>
+          </div>
+          <button class="flex gap-1 justify-center items-center bg-[#5979fe] hover:bg-[#79bbff] text-white py-2 px-4 rounded-[6px]">
+            <span class="material-symbols-outlined text-[14px]">
+                shopping_cart
+            </span>
+                <span class="text-[14px]">Buy Now</span>
+            </button>
+        </div>
+      </div>
+    `;
+
+    diaLogPrice.appendChild(card);
 });

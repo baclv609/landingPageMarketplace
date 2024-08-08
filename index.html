@@ -36,6 +36,27 @@
             font-size: 15px;
             height: 15px;
         }
+
+        #overlay {
+            transition: opacity 0.3s ease;
+        }
+
+        .item-card-dialog {
+            transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
+                transform 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+            box-shadow: rgba(145, 158, 171, 0.2) 0px 0px 2px 0px,
+                rgba(145, 158, 171, 0.12) 0px 12px 24px -4px;
+            /* Bắt đầu với vị trí ban đầu dưới khi hover */
+            transform: translateY(5px);
+        }
+
+        /* Hiệu ứng hover */
+        .item-card-dialog:hover {
+            transform: translateY(0px);
+            /* Trượt lên trên vị trí ban đầu */
+            box-shadow: rgba(145, 158, 171, 0.2) 0px 4px 12px 0px,
+                rgba(145, 158, 171, 0.12) 0px 16px 24px -4px;
+        }
     </style>
     <!-- css tailwind  -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -47,7 +68,7 @@
             class="sticky top-0 z-10 block w-full max-w-full px-4 py-2 bg-white border rounded-none shadow-md h-max border-white/80 bg-opacity-80 backdrop-blur-2xl backdrop-saturate-200 lg:px-8 lg:py-3">
             <nav>
                 <div class="flex items-center justify-between">
-                    <a href="#" class="mr-4 block cursor-pointer flex items-center">
+                    <a href="index.html" class="mr-4 block cursor-pointer flex items-center">
                         <img src="./img/minlogo-collapse.svg" alt="" class="w-[35px]">
                         <span class="font-extrabold text-xl">emLogin</span>
                     </a>
@@ -56,12 +77,12 @@
                         <!-- button login -->
                         <div class="flex items-center gap-x-1">
                             <button
-                                class="px-4 py-2 font-sans text-xs font-bold text-center text-gray-900 uppercase align-middle transition-all rounded-lg select-none hover:bg-gray-900/10 active:bg-gray-900/20 disabled:pointer-events-none disabled:opacity-50"
+                                class="px-4 py-2 font-sans text-xs font-bold text-center text-gray-900 align-middle transition-all rounded-lg select-none hover:bg-gray-900/10 active:bg-gray-900/20 border"
                                 type="button">
-                                <span>Log In</span>
+                                <span>Log in</span>
                             </button>
                             <button
-                                class="rounded-[4px] bg-[#5979fe] from-gray-900 to-gray-800 py-2 px-4 text-center text-xs font-bold uppercase text-white shadow-md shadow-gray-900/10 transition-all hover:shadow-lg hover:shadow-gray-900/20 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50"
+                                class="rounded-[4px] bg-[#5979fe] hover:bg-[#79bbff] py-2 px-4 text-center text-xs font-bold text-white transition-all border"
                                 type="button">
                                 <span>Sign in</span>
                             </button>
@@ -218,6 +239,49 @@
                         </button>
                     </nav>
                     <!-- End Pagination -->
+
+
+                    <!-- Modal HTML -->
+                    <div id="quoteDialog" tabindex="-1"
+                        class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center m-auto rounded-[4px] w-[85%] max-w-[1100px] md:inset-0 max-h-[480px]">
+                        <!-- overlay -->
+                        <div id="overlay" class="hidden fixed inset-0 bg-gray-800 bg-opacity-50"></div>
+
+                        <div class="relative p-6 bg-white rounded-md">
+                            <!-- Modal content -->
+                            <div class="relative">
+                                <!-- Modal header -->
+                                <div class="rounded mb-[30px]">
+                                    <div class="flex justify-center items-center flex-col">
+                                        <h2 class="text-xl font-semibold text-center text-gray-800">Payment Confirmation
+                                        </h2>
+                                        <p class="text-sm text-gray-600 text-center">Please review the details below and
+                                            proceed
+                                            with the payment.</p>
+                                    </div>
+                                    <div class="absolute top-0 right-0">
+                                        <button type="button"
+                                            class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center"
+                                            data-modal-close="close-quoteDialog">
+                                            <span class="material-symbols-outlined">
+                                                close
+                                            </span>
+                                            <span class="sr-only">Close modal</span>
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <!-- Modal body -->
+                                <div id="modal-content"
+                                    class="p-0 max-h-[calc(-540px + 100vh)] overflow-y-auto overflow-x-hidden">
+                                    <div id="diaLogPrice" class="flex flex-wrap">
+                                        <!-- Content will be dynamically injected here -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end Modal -->
             </section>
 
 

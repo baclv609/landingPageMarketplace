@@ -419,6 +419,41 @@ const listCard = [
         star: 4.3,
     },
 ];
+const diaLogData = [
+    {
+        title: 'EMAIL MARKETING',
+        features: [
+            '60.000 email quảng cáo',
+            '10.000 liên hệ lưu trữ'
+        ],
+        price: '2.900.000',
+    },
+    {
+        title: 'STATER',
+        features: [
+            '60.000 email quảng cáo',
+            '10.000 liên hệ lưu trữ',
+            '10 kịch bản tự động'
+        ],
+        price: '2.900.000',
+    },
+    {
+        title: 'STANDARD',
+        features: [
+            '80.000 email quảng cáo',
+            '20.000 liên hệ lưu trữ',
+        ],
+        price: '15.900.000',
+    },
+    {
+        title: 'PROFESSIONAL',
+        features: [
+            '90.000 email quảng cáo',
+            '30.000 liên hệ lưu trữ',
+        ],
+        price: '31.900.000',
+    }
+];
 
 // Lấy 6 phần tử đầu tiên từ mảng
 const firstSixCards = listCard.slice(0, 6);
@@ -435,26 +470,26 @@ listCard.forEach((card) => {
     cardElementDetail.classList.add("grow-0", "shrink-0", "xl:w-1/3", "xl:basis-1/3", "lg:w-1/2", "lg:basis-1/2", "md:w-full", "md:basis-full", "sm:max-w-full", "sm:basis-full", "w-full", "basis-full");
 
     cardElementDetail.innerHTML =/*html*/ `
-    <div class="m-2 item-card bg-white text-gray-900 rounded overflow-hidden h-[225px] border border-gray-200">
+   <div class="m-2 item-card bg-white rounded overflow-hidden h-[225px] border border-gray-200">
       <!-- card -->
       <div class="flex justify-between items-center pt-6 px-6 h-[74px]">
         <div class="flex items-center">
-          <a href="" class="card-icon-link mr-2">
-            <img src="${card.icon}" alt="${card.name}-icon" class="card-icon w-[50px] h-[50px] rounded-md border border-gray-300">
+          <a href="marketplaceDetail.html" class="card-icon-link mr-2">
+            <img src="${card.icon}" alt="${card.name}-icon" class="card-icon w-[50px] h-[50px] rounded-[4px] border border-gray-300">
           </a>
           <div class="card-name flex flex-col w-[70%]">
-            <a href="/marketplace-details" class="card-title text-lg font-semibold text-[#212b36] line-clamp-1 cursor-pointer">${card.name}</a>
-            <span class="text-[#637381] text-[11px] leading-5">Created by <span class="creator-name text-[#5979fe] font-bold cursor-pointer">${card.createdBy}</span></span>
+            <a href="marketplaceDetail.html" class="card-title text-lg font-semibold text-[#212b36] line-clamp-1 cursor-pointer">${card.name}</a>
+            <span class="text-[#637381] text-[11px] leading-5">Created by <a href="userMarketplace.html" class="creator-name text-[#5979fe] font-bold cursor-pointer">${card.createdBy}</a></span>
           </div>
         </div>
-        <div class="bg-[#5979fe] hover:bg-[#79bbff] text-white rounded-md p-2 flex items-center justify-center cursor-pointer" onclick="showQuoteDialog()">
+        <button class="bg-[#5979fe] hover:bg-[#79bbff] text-white rounded-md p-2 flex items-center justify-center cursor-pointer download-button-itemCard">
           <span class="material-symbols-outlined text-[20px]">download</span>
-        </div>
+        </button>
       </div>
       <!-- desc -->
       <div class="px-5 pt-[10px] flex flex-col h-[140px]">
-        <a href="#">
-          <p class="text-sm text-[#637381] line-clamp-2 mb-3 leading-[23px] cursor-pointer">${card.description}</p>
+        <a href="marketplaceDetail.html">
+          <p class="text-sm text-[#637381] line-clamp-2 mb-3 leading-[23px] cursor-pointer break-words">${card.description}</p>
         </a>
         <div class="flex flex-col mt-2">
           <span class="post-date text-xs text-[#637381]">Post date: ${card.postDate}</span>
@@ -483,7 +518,6 @@ listCard.forEach((card) => {
 
     pelatedProducts.appendChild(cardElementDetail);
 });
-
 
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -538,34 +572,138 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 // tonggle modal
-// Function to show or hide the modal
-function toggleModal(modalId, action) {
-    const modal = document.getElementById(modalId);
-    const overlay = document.getElementById('overlay'); // Get the overlay element
+document.addEventListener('DOMContentLoaded', function () {
+    const openModalButton = document.querySelector('[data-modal-toggle="tongle-modal-riview"]');
+    const closeModalButton = document.querySelector('[data-modal-hide="tongle-modal-riview"]');
+    const sendReviewButton = document.getElementById('send-review-button');
+    const modal = document.getElementById('tongle-modal-riview');
+    const overlay = document.getElementById('overlay');
 
-    if (action === 'show') {
+    // Mở modal và overlay
+    openModalButton.addEventListener('click', function () {
         modal.classList.remove('hidden');
-        overlay.classList.add('show'); // Add the 'show' class to the overlay element
-    } else {
+        overlay.classList.remove('hidden');
+    });
+
+    // Đóng modal và overlay
+    closeModalButton.addEventListener('click', function () {
         modal.classList.add('hidden');
-        overlay.classList.remove('show'); // Remove the 'show' class from the overlay element
-    }
-}
+        overlay.classList.add('hidden');
+    });
 
-// Open modal event
-document.querySelector('[data-modal-toggle]').addEventListener('click', function () {
-    toggleModal('static-modal', 'show');
+    // Đóng modal và overlay khi nhấn ngoài modal
+    window.addEventListener('click', function (event) {
+        if (event.target === overlay) {
+            modal.classList.add('hidden');
+            overlay.classList.add('hidden');
+        }
+    });
+
+    // Xử lý gửi review
+    sendReviewButton.addEventListener('click', function () {
+        const textarea = document.getElementById('message');
+        const reviewText = textarea.value;
+
+        console.log('Review:', reviewText);
+
+        // fetch('/api/send-review', {
+        //     method: 'POST',
+        //     headers: {
+        //         'Content-Type': 'application/json',
+        //     },
+        //     body: JSON.stringify({ review: reviewText }),
+        // })
+        // .then(response => response.json())
+        // .then(data => console.log('Success:', data))
+        // .catch(error => console.error('Error:', error));
+
+        // Đóng modal
+        modal.classList.add('hidden');
+        overlay.classList.add('hidden');
+    });
 });
 
-// Close modal event
-document.querySelector('[data-modal-hide]').addEventListener('click', function () {
-    toggleModal('static-modal', 'hide');
+
+
+// Thêm sự kiện cho tất cả các nút tải xuống
+document.addEventListener('DOMContentLoaded', function () {
+    const modal = document.getElementById('quoteDialog');
+    const overlay = document.getElementById('overlayDetail');
+
+    const closeQuoteDialog = document.querySelector('[data-modal-close="close-quoteDialog"]');
+
+    document.querySelectorAll('.download-button-itemCard').forEach(button => {
+        button.addEventListener('click', async () => {
+            // Hiển thị modal
+            console.log('click', closeQuoteDialog);
+
+            modal.classList.remove('hidden');
+            overlay.classList.remove('hidden');
+            console.log('Modal is displayed');
+
+            // Gọi API để lấy dữ liệu
+            // const response = await fetch('');
+            // const data = await response.json();
+
+            // Hiển thị nội dung trong modal
+            // const modalContent = document.getElementById('modal-content');
+            // modalContent.innerHTML = ''; // Xóa nội dung cũ
+
+        });
+    });
+
+    closeQuoteDialog.addEventListener('click', () => {
+        // Ẩn modal và overlay
+        modal.classList.add('hidden');
+        overlay.classList.add('hidden');
+    });
 });
 
-// Optional: Close the modal when clicking outside of it
-window.addEventListener('click', function (event) {
-    const modal = document.getElementById('static-modal');
-    if (event.target === modal) {
-        toggleModal('static-modal', 'hide');
-    }
+
+
+// dialog price 
+const diaLogPrice = document.getElementById('diaLogPrice');
+diaLogData.forEach(item => {
+    const card = document.createElement('div');
+    card.className = 'grow-0 shrink-0 xl:basis-1/4 xl:max-w-1/4 lg:basis-1/3 lg:max-w-1/3 md:basis-1/2 md:max-w-1/2 sm:basis-full sm:max-w-full w-full';
+
+    card.innerHTML = /*html*/ `
+      <div class="item-card-dialog p-5 m-[10px] border rounded-[6px]">
+        <div class="flex flex-col gap-y-[18px]">
+          <div class="flex flex-col justify-between h-full">
+            <div>
+              <div class="w-full">
+                <h3 class="text-lg font-semibold mb-4">${item.title}</h3>
+                <div class="mb-4 flex flex-col h-[80px]">
+                    ${item.features.map(feature => `
+                    <div class="flex items-center mb-2 text-sm">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-green-500 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                        </svg>
+                        <span>${feature}</span>
+                    </div>
+                    `).join('')}
+                </div>
+              </div>
+              <div class="flex flex-col">
+                <p class="text-[28px] font-bold">${item.price}</p>
+                <p class="min-h-[20px]">VND/year</p>
+              </div>
+            </div>
+          </div>
+          <button class="flex gap-1 justify-center items-center bg-[#5979fe] hover:bg-[#79bbff] text-white py-2 px-4 rounded-[6px]">
+            <span class="material-symbols-outlined text-[14px]">
+                shopping_cart
+            </span>
+                <span class="text-[14px]">Buy Now</span>
+            </button>
+        </div>
+      </div>
+    `;
+
+    diaLogPrice.appendChild(card);
 });
+
+
+
+
