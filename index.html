@@ -57,6 +57,15 @@
             box-shadow: rgba(145, 158, 171, 0.2) 0px 4px 12px 0px,
                 rgba(145, 158, 171, 0.12) 0px 16px 24px -4px;
         }
+
+        .active-category {
+            background-color: #5979FE;
+            color: #FFFFFF !important;
+        }
+
+        .category-item:hover {
+            opacity: 0.7;
+        }
     </style>
     <!-- css tailwind  -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -82,7 +91,7 @@
                                 <span>Log in</span>
                             </button>
                             <button
-                                class="rounded-[4px] bg-[#5979fe] hover:bg-[#79bbff] py-2 px-4 text-center text-xs font-bold text-white transition-all border"
+                                class="rounded-[4px] bg-[#5979fe] hover:opacity-[0.8] py-2 px-4 text-center text-xs font-bold text-white transition-all border"
                                 type="button">
                                 <span>Sign in</span>
                             </button>
@@ -146,7 +155,7 @@
                             <!-- Reload Button -->
                             <div class="relative">
                                 <button
-                                    class="h-[32px] !text-gray-400 flex items-center p-2 bg-white rounded hover:bg-gray-300">
+                                    class="h-[32px] !text-gray-400 flex items-center p-2 bg-white rounded hover:opacity-[0.8]">
                                     <span class="material-symbols-outlined text-[20px]">
                                         autorenew
                                     </span>
@@ -162,36 +171,29 @@
                             class="md:block hidden w-[200px] h-[calc(100vh-355px)] overflow-y-auto overflow-x-hidden mt-2 bg-white rounded pt-5 px-4">
                             <h6 class="text-[#212b36] text-lg font-bold">Categories</h6>
                             <ul class="pt-2">
-                                <li
-                                    class="py-2 px-4 text-[#303133] text-[14px] font-medium rounded bg-[#5979FE] text-white">
+                                <li id="default-category"
+                                    class="category-item py-2 px-4 text-[#303133] text-[14px] font-medium rounded">
                                     <a href="#">All</a>
                                 </li>
-                                <li
-                                    class="py-2 px-4 text-[#303133] text-[14px] font-medium rounded hover:bg-[#cddefca6]">
+                                <li class="category-item py-2 px-4 text-[#303133] text-[14px] font-medium rounded">
                                     <a href="#">Facebook</a>
                                 </li>
-                                <li
-                                    class="py-2 px-4 text-[#303133] text-[14px] font-medium rounded hover:bg-[#cddefca6]">
+                                <li class="category-item py-2 px-4 text-[#303133] text-[14px] font-medium rounded">
                                     <a href="#">Twitter</a>
                                 </li>
-                                <li
-                                    class="py-2 px-4 text-[#303133] text-[14px] font-medium rounded hover:bg-[#cddefca6]">
+                                <li class="category-item py-2 px-4 text-[#303133] text-[14px] font-medium rounded">
                                     <a href="#">Google</a>
                                 </li>
-                                <li
-                                    class="py-2 px-4 text-[#303133] text-[14px] font-medium rounded hover:bg-[#cddefca6]">
+                                <li class="category-item py-2 px-4 text-[#303133] text-[14px] font-medium rounded">
                                     <a href="#">Amazon</a>
                                 </li>
-                                <li
-                                    class="py-2 px-4 text-[#303133] text-[14px] font-medium rounded hover:bg-[#cddefca6]">
+                                <li class="category-item py-2 px-4 text-[#303133] text-[14px] font-medium rounded">
                                     <a href="#">Ebay</a>
                                 </li>
-                                <li
-                                    class="py-2 px-4 text-[#303133] text-[14px] font-medium rounded hover:bg-[#cddefca6]">
+                                <li class="category-item py-2 px-4 text-[#303133] text-[14px] font-medium rounded">
                                     <a href="#">Discord</a>
                                 </li>
-                                <li
-                                    class="py-2 px-4 text-[#303133] text-[14px] font-medium rounded hover:bg-[#cddefca6]">
+                                <li class="category-item py-2 px-4 text-[#303133] text-[14px] font-medium rounded">
                                     <a href="#">Zalo</a>
                                 </li>
                             </ul>

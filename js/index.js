@@ -355,8 +355,8 @@ listCard.forEach((card) => {
             <img src="${card.icon}" alt="${card.name}-icon" class="card-icon w-[50px] h-[50px] rounded-[4px] border border-gray-300">
           </a>
           <div class="card-name flex flex-col w-[70%]">
-            <a href="marketplaceDetail.html" class="card-title text-lg font-semibold text-[#212b36] line-clamp-1 cursor-pointer">${card.name}</a>
-            <span class="text-[#637381] text-[11px] leading-5">Created by <a href="userMarketplace.html" class="creator-name text-[#5979fe] font-bold cursor-pointer">${card.createdBy}</a></span>
+            <a href="marketplaceDetail.html" class="card-title text-lg font-semibold text-[#212b36] line-clamp-1 cursor-pointer hover:opacity-[0.8]">${card.name}</a>
+            <span class="text-[#637381] text-[11px] leading-5">Created by <a href="userMarketplace.html" class="creator-name text-[#5979fe] font-bold cursor-pointer hover:opacity-[0.8]">${card.createdBy}</a></span>
           </div>
         </div>
         <button class="bg-[#5979fe] hover:bg-[#79bbff] text-white rounded-md p-2 flex items-center justify-center cursor-pointer download-button-itemCard">
@@ -428,6 +428,24 @@ document.addEventListener('DOMContentLoaded', function () {
         modal.classList.add('hidden');
         overlay.classList.add('hidden');
     });
+
+
+
+    const categoryItems = document.querySelectorAll('.category-item');
+    const defaultCategory = document.getElementById('default-category');
+
+    // Set the first category item as active initially
+    defaultCategory.classList.add('active-category');
+
+    categoryItems.forEach(item => {
+        item.addEventListener('click', () => {
+            // Remove 'active-category' class from all items
+            categoryItems.forEach(el => el.classList.remove('active-category'));
+
+            // Add 'active-category' class to the clicked item
+            item.classList.add('active-category');
+        });
+    });
 });
 
 
@@ -462,7 +480,7 @@ diaLogData.forEach(item => {
               </div>
             </div>
           </div>
-          <button class="flex gap-1 justify-center items-center bg-[#5979fe] hover:bg-[#79bbff] text-white py-2 px-4 rounded-[6px]">
+          <button class="flex gap-1 justify-center items-center bg-[#5979fe] hover:opacity-[0.8] text-white py-2 px-4 rounded-[6px]">
             <span class="material-symbols-outlined text-[14px]">
                 shopping_cart
             </span>
